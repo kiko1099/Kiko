@@ -1,51 +1,27 @@
 <?php
 
-require_once( WP_CONTENT_DIR . '/themes/vip/plugins/vip-init.php' );
+// require_once( WP_CONTENT_DIR . '/themes/vip/plugins/vip-init.php' );
 
-
-// include maker-faire-forms plugin
-require_once( __DIR__ . '/plugins/public-pages/makers.php' );
-
-// include maker-faire-forms plugin
-require_once( __DIR__ . '/post-types/maker.php' );
-
-// Sponsor Carousel
-include_once dirname( __FILE__ ) . '/plugins/public-pages/sponsor.php';
-
-
+require_once( 'plugins/public-pages/makers.php' );
+require_once( 'post-types/maker.php' );
 require_once( 'taxonomies/type.php' );
 require_once( 'taxonomies/location.php' );
 require_once( 'taxonomies/faire.php' );
 require_once( 'taxonomies/location_category.php' );
 require_once( 'taxonomies/group.php' );
-require_once( 'plugins/post-types/event-items.php' );
-if ( defined( 'WP_CLI' ) && WP_CLI )
-	require_once( 'plugins/wp-cli/wp-cli.php' );
-
-if ( function_exists( 'wpcom_vip_load_plugin' ) ) {
-	wpcom_vip_load_plugin( 'easy-custom-fields' );
-}
-
-// load edit-flow plugin
-if ( function_exists( 'wpcom_vip_load_plugin' ) ) {
-	wpcom_vip_load_plugin( 'edit-flow' );
-}
+require_once( 'post-types/event-items.php' );
 
 // add post-thumbnails support to theme
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'schedule-thumb', 140, 140, true );
 
-if ( function_exists( 'wpcom_vip_enable_opengraph' ) ) {
-	wpcom_vip_enable_opengraph();
-}
+$args = array(
+	'width'         => 380,
+	'height'        => 87,
+	'default-image' => get_template_directory_uri() . '/images/logo-1.jpg',
+);
 
-if ( function_exists( 'vip_contrib_add_upload_cap' ) ) {
-	vip_contrib_add_upload_cap();
-}
-
-if ( function_exists( 'wpcom_vip_sharing_twitter_via' ) ) {
-	wpcom_vip_sharing_twitter_via( 'make' );
-}
+add_theme_support( 'custom-header', $args );
 
 function make_enqueue_jquery() {
 	wp_enqueue_script( 'jquery' );

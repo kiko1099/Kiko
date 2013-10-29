@@ -48,7 +48,12 @@
 			
 				<div class="span5">
 			
-					<h1><a href="http://makerfaire.com" title="Maker Faire"><img src="http://cdn.makezine.com/make/makerfaire/bayarea/2012/images/logo.jpg" width="380" alt="Maker Faire" title="Maker Faire"></a></h1>
+					<!-- Custom Header Here -->
+					<h1>
+						<a href="/">
+							<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php echo bloginfo( 'description' ); ?>" />
+						</a>
+					</h1>
 			
 				</div>
 				
