@@ -16,9 +16,9 @@ add_theme_support( 'post-thumbnails' );
 add_image_size( 'schedule-thumb', 140, 140, true );
 
 $args = array(
-	'width'         => 380,
-	'height'        => 87,
-	'default-image' => get_template_directory_uri() . '/images/logo-1.jpg',
+	'width'         => 940,
+	'height'        => 140,
+	'default-image' => get_template_directory_uri() . '/images/eastbay_mmf_logos_wordpress.gif',
 );
 
 add_theme_support( 'custom-header', $args );
@@ -27,9 +27,7 @@ function make_enqueue_jquery() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.js', array( 'jquery' ) );
 	wp_enqueue_script( 'make-countdown', get_stylesheet_directory_uri() . '/js/jquery.countdown.js', array( 'jquery' ) );
-	wp_enqueue_style( 'make-bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.css' );
 	wp_enqueue_style( 'make-styles', get_stylesheet_directory_uri() . '/css/style.css' );
-	wp_enqueue_style( 'make', get_stylesheet_directory_uri() . '/style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'make_enqueue_jquery' );
 

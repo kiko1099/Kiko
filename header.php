@@ -45,8 +45,12 @@
 	<div class="container">
 
 			<div class="row">
+
+				<div class="span12">
+					<p class="tagline"><?php echo bloginfo( 'description' ); ?></p>
+				</div>
 			
-				<div class="span5">
+				<div class="span12">
 			
 					<!-- Custom Header Here -->
 					<h1>
@@ -57,7 +61,7 @@
 			
 				</div>
 				
-				<div class="span7">
+				<div class="span12">
 			
 					<div class="nav navi">
 
@@ -77,8 +81,8 @@
 								'after'           => '',
 								'link_before'     => '<div>',
 								'link_after'      => '</div>',
-								'items_wrap'      => '<ul id="%1$s" class="%2$s" style="margin-left:12px;">%3$s</ul>',
-								'depth'           => 0,
+								'items_wrap'      => '<ul id="%1$s" class="%2$s nav nav-pills">%3$s</ul>',
+								'depth'           => 1,
 								'walker'          => ''
 							);
 
