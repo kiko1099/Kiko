@@ -51,7 +51,7 @@
 					<!-- Custom Header Here -->
 					<h1>
 						<a href="/">
-							<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php echo bloginfo( 'description' ); ?>" />
+							<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" title="<?php echo bloginfo( 'name' ); ?>" alt="<?php echo bloginfo( 'description' ); ?>" />
 						</a>
 					</h1>
 			
