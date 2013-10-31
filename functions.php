@@ -3,7 +3,7 @@
 // require_once( WP_CONTENT_DIR . '/themes/vip/plugins/vip-init.php' );
 
 require_once( 'plugins/public-pages/makers.php' );
-require_once( 'post-types/maker.php' );
+require_once( 'post-types/application.php' );
 require_once( 'taxonomies/type.php' );
 require_once( 'taxonomies/location.php' );
 require_once( 'taxonomies/faire.php' );
