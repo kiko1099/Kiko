@@ -1,7 +1,7 @@
 <?php
 
 function type_init() {
-	register_taxonomy( 'type', array( 'mf_form' ), array(
+	register_taxonomy( 'type', array( 'application' ), array(
 		'hierarchical'            => false,
 		'public'                  => true,
 		'show_in_nav_menus'       => true,

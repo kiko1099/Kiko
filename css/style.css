@@ -7396,6 +7396,9 @@ body.home .stage3 .top-content .span4 h2 a {
 .lead ul li {
   line-height: 120%;
 }
+.content {
+  overflow: hidden;
+}
 .search .search-title {
   margin-bottom: 5px;
 }

@@ -4,12 +4,11 @@
 
 require_once( 'plugins/public-pages/makers.php' );
 require_once( 'post-types/application.php' );
+require_once( 'post-types/event-items.php' );
 require_once( 'taxonomies/type.php' );
 require_once( 'taxonomies/location.php' );
 require_once( 'taxonomies/faire.php' );
-require_once( 'taxonomies/location_category.php' );
 require_once( 'taxonomies/group.php' );
-require_once( 'post-types/event-items.php' );
 
 // add post-thumbnails support to theme
 add_theme_support( 'post-thumbnails' );

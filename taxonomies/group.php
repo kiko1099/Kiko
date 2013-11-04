@@ -1,7 +1,7 @@
 <?php
 
 function mf_group_init() {
-	register_taxonomy( 'group', array( 'mf_form' ), array(
+	register_taxonomy( 'group', array( 'application' ), array(
 		'hierarchical'            => true,
 		'public'                  => true,
 		'show_in_nav_menus'       => true,
