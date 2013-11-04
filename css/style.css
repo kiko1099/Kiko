@@ -7408,3 +7408,10 @@ body.home .stage3 .top-content .span4 h2 a {
   background-color: #E1E1E1;
   font-size: 16px;
 }
+img {
+  max-width: 100%;
+}
+.wp-caption .wp-caption-text {
+  padding: 10px 0;
+  font-style: italic;
+}

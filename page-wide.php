@@ -1,8 +1,4 @@
-<?php 
-/*
-Template name: Wide Template
-*/
-get_header(); ?>
+<?php get_header(); ?>
 
 <div class="clear"></div>
 
@@ -16,19 +12,14 @@ get_header(); ?>
 				
 				<article <?php post_class(); ?>>
 
-					<?php the_content(); ?>
+					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
+					<?php the_content(); ?>
+				
 				</article>
-							
+				
 			<?php endwhile; ?>
 
-				<ul class="pager">
-			
-					<li class="previous"><?php previous_posts_link('&larr; Previous Page'); ?></li>
-					<li class="next"><?php next_posts_link('Next Page &rarr;'); ?></li>
-				
-				</ul>
-			
 			<?php else: ?>
 			
 				<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>

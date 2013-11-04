@@ -1,4 +1,4 @@
 Maker Faire
 ==========
 
-This is the Maker Faire WordPress theme. Boom!
+This is the Mini Maker Faire WordPress theme. Boom!
