@@ -35,7 +35,7 @@
 			'create-post' => array(  // We can setup our form to create a new post on save. YAY!
 				'form_title' => 'project_name', // The NAME FIELD of the form field we want to set as our post title
 				'post_type' => 'application', // Pass the post type name
-				'post_status' => 'proposed', // Pass the post status. If empty or not set, 'publish' is default
+				'post_status' => 'pending', // Pass the post status. If empty or not set, 'publish' is default
 			),
 		);
 
