@@ -16,6 +16,17 @@
 
 
 	/**
+	 * Sets a notification that we are using an alpha version of the theme
+	 * TODO: Remove when we are ready to go live 
+	 * @return html
+	 */
+	function make_dev_notification() { ?>
+		<div id="message" class="error"><p>This theme is under development and is not ready for public useage. Please use another theme.</p></div>
+	<?php }
+	add_action( 'admin_notices', 'make_dev_notification' );
+
+
+	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
 	 * Note that this function is hooked into the after_setup_theme hook, which runs
@@ -93,6 +104,36 @@
 	}
 	add_action( 'admin_enqueue_scripts', 'make_add_admin_resources' );
 
+
+	/**
+	 * Register some custom post statues for just the applications
+	 * @return void
+	 */
+	function make_set_post_statuses() {
+		register_post_status( 'proposed', array(
+			'label' => _x( 'Proposed', 'post' ),
+			'public' => false,
+			'exclude_from_search' => true,
+			'show_in_admin_all_list' => true,
+			'show_in_admin_status_list' => true,
+			'label_count' => _n_noop( 'Unread <span class="count">(%s)</span>', 'Unread <span class="count">(%s)</span>' ),
+		) );
+	}
+	add_action( 'init', 'make_set_post_statuses' );
+
+
+	function make_add_post_status() {
+		global $post;
+
+		if ( $post->post_type == 'application' ) {
+			if ( $post->post_status == 'proposed' ) {
+				$complete = ' selected="selected"';
+				$label = '<span id="post-status-display">Proposed</span>';
+			}
+
+			echo '<script>jQuery(document).ready(function($){$("select#post_status").append("<option value="proposed"' . '></option></script>';
+		}
+	}
 
 	/**
 	 * Make the 'accepted' status public so that forms can be shown
