@@ -18,8 +18,8 @@
 		 * @since    1.0a-11062013
 		 */
 		public $settings = array(
-			'title' => __( 'Maker Faire Exhibit Application', 'make-mini-mf' ),
-			'description' => __( '* Indicates a required field.', 'make-mini-mf' ),
+			'title' => 'Maker Faire Exhibit Application',
+			'description' => '* Indicates a required field.',
 			'label_left' => false,	// Define if you want labels to be left or stacked
 			'args' => array(
 				'class' => 'mf-exhibits',
@@ -34,7 +34,7 @@
 			),
 			'create-post' => array(  // We can setup our form to create a new post on save. YAY!
 				'form_title' => 'project_name', // The NAME FIELD of the form field we want to set as our post title
-				'post_type' => 'mf_form', // Pass the post type name
+				'post_type' => 'application', // Pass the post type name
 				'post_status' => 'proposed', // Pass the post status. If empty or not set, 'publish' is default
 			),
 		);
@@ -83,9 +83,9 @@
 				'required' => true,
 				'args' 	   => array(
 					'id'		  => 'project-name',
-					'label' 	  => __( 'Project Name', 'make-mini-mf' ),
+					'label' 	  => 'Project Name',
 					'name'	  	  => 'project_name',
-					'description' => __( 'Provide a short, catchy name for your project. Response limited to 50 characters', 'make-mini-mf' ),
+					'description' => 'Provide a short, catchy name for your project. Response limited to 50 characters',
 					'maxlength'   => 50,
 				),
 			),
@@ -95,9 +95,9 @@
 				'required' => true,
 				'args' 	   => array(
 					'id'		  => 'private-description',
-					'label' 	  => __( 'Tell us about your project', 'make-mini-mf' ),
+					'label' 	  => 'Tell us about your project',
 					'name'	  	  => 'private_description',
-					'description' => __( 'For the Maker Faire team, explain what your project is and describe what you will actually be bringing to Maker Faire. This information will not be made public. Be as descriptive as possible.', 'make-mini-mf' ),
+					'description' => 'For the Maker Faire team, explain what your project is and describe what you will actually be bringing to Maker Faire. This information will not be made public. Be as descriptive as possible.',
 				),
 			),
 			array(
@@ -106,9 +106,9 @@
 				'required' => true,
 				'args' 	   => array(
 					'id'		  => 'public-description',
-					'label' 	  => __( 'Short Project Description', 'make-mini-mf' ),
+					'label' 	  => 'Short Project Description',
 					'name'	  	  => 'public_description',
-					'description' => __( 'We need a short, concise description. Limited to 225 characters.', 'make-mini-mf' ),
+					'description' => 'We need a short, concise description. Limited to 225 characters.',
 					'maxlength'   => 250,
 				),
 			),
@@ -118,9 +118,9 @@
 				'required' => true,
 				'args' 	   => array(
 					'w_id'  	  => 'project-photo',
-					'label' 	  => __( 'Project Photo', 'make-mini-mf' ),
+					'label' 	  => 'Project Photo',
 					'name'	  	  => 'project_photo',
-					'description' => __( 'File must be at least 500px wide or larger. PNG, JPG or GIF formats only.', 'make-mini-mf' ),
+					'description' => 'File must be at least 500px wide or larger. PNG, JPG or GIF formats only.',
 				),
 			),
 			array(
@@ -129,9 +129,9 @@
 				'required' => false,
 				'args' 	   => array(
 					'id'		  => 'project-website',
-					'label' 	  => __( 'Project Website', 'make-mini-mf' ),
+					'label' 	  => 'Project Website',
 					'name'	  	  => 'project_website',
-					'description' => __( 'Example: http://www.makerfaire.com/', 'make-mini-mf' ),
+					'description' => 'Example: http://www.makerfaire.com/',
 				),
 			),
 			array(
@@ -140,9 +140,9 @@
 				'required' => false,
 				'args' 	   => array(
 					'id'		  => 'project-video',
-					'label' 	  => __( 'Project Video', 'make-mini-mf' ),
+					'label' 	  => 'Project Video',
 					'name'	  	  => 'project_video',
-					'description' => __( 'Example: http://www.youtube.com/watch?v=RD_JpGgUFQQ', 'make-mini-mf' ),
+					'description' => 'Example: http://www.youtube.com/watch?v=RD_JpGgUFQQ',
 				),
 			),
 			array(
@@ -151,9 +151,9 @@
 				'required' => true,
 				'args' 	   => array(
 					'id'		  => 'food',
-					'label' 	  => __( 'Will you be giving away, selling, or sampling food (packaged or unpackaged) at Maker Faire?', 'make-mini-mf' ),
+					'label' 	  => 'Will you be giving away, selling, or sampling food (packaged or unpackaged) at Maker Faire?',
 					'name'	  	  => 'food',
-					'description' => __( 'Including food in your exhibit may require a Health Permit and fees. Details will be emailed to you after acceptance.', 'make-mini-mf' ),
+					'description' => 'Including food in your exhibit may require a Health Permit and fees. Details will be emailed to you after acceptance.',
 					'options'	  => array(
 						'Yes',
 						'No',
@@ -166,13 +166,13 @@
 				'required' => true,
 				'args' 	   => array(
 					'id'		  => 'org-type',
-					'label' 	  => __( 'Are you a:', 'make-mini-mf' ),
+					'label' 	  => 'Are you a:',
 					'name'	  	  => 'org_type',
 					'options'	  => array(
-						__( 'Non-Profit', 'make-mini-mf' ),
-						__( 'Cause or Mission-Based Organization', 'make-mini-mf' ),
-						__( 'Established Company or Commercial Entity', 'make-mini-mf' ),
-						__( 'None of the Above', 'make-mini-mf' ),
+						'Non-Profit',
+						'Cause or Mission-Based Organization',
+						'Established Company or Commercial Entity',
+						'None of the Above',
 					),
 				),
 			),
@@ -182,11 +182,11 @@
 				'required' => false,
 				'args' 	   => array(
 					'id'		  => 'sales',
-					'label' 	  => __( 'Will you be selling or marketing a product at Maker Faire?', 'make-mini-mf' ),
+					'label' 	  => 'Will you be selling or marketing a product at Maker Faire?',
 					'name'	  	  => 'sales',
 					'options'	  => array(
-						__( 'Yes', 'make-mini-mf' ),
-						__( 'No', 'make-mini-mf' ),
+						'Yes',
+						'No',
 					),
 				),
 			),
@@ -196,11 +196,11 @@
 				'required' => false,
 				'args' 	   => array(
 					'id'		  => 'crowdsource_funding',
-					'label' 	  => __( 'At Maker Faire, will you soliciting any crowdsource funding (Kickstarter, Indiegogo, PiggyBackr, etc?)', 'make-mini-mf' ),
+					'label' 	  => 'At Maker Faire, will you soliciting any crowdsource funding (Kickstarter, Indiegogo, PiggyBackr, etc?)',
 					'name'	  	  => 'sales',
 					'options'	  => array(
-						__( 'Yes', 'make-mini-mf' ),
-						__( 'No', 'make-mini-mf' ),
+						'Yes',
+						'No',
 					),
 				),
 			),

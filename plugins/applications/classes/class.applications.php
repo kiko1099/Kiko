@@ -28,8 +28,8 @@
 		 * @since    1.0a-11062013
 		 */
 		private $demo_settings = array(
-			'title' => __( 'Form Title', 'make-mini-mf'),
-			'description' => __( 'This is my form description, if I want one...', 'make-mini-mf' ),
+			'title' => 'Form Title',
+			'description' => 'This is my form description, if I want one...',
 			'label_left' => false,				// Define where if you want labels to left or stacked
 			'args' => array(
 				'class' => 'form-class',
@@ -71,9 +71,9 @@
 					'id'		  => 'text-field',
 					'class'		  => 'text-input',
 					'label' 	  => 'Text Field',
-					'placeholder' => __( 'TEXT sdagusdhgsuh', 'make-mini-mf'),
+					'placeholder' => 'TEXT sdagusdhgsuh',
 					'name'	  	  => 'first-text',
-					'description' => __( 'asfddsf', 'make-mini-mf' ),
+					'description' => 'asfddsf',
 					'maxlength'   => 50,
 				),
 			),
@@ -86,10 +86,10 @@
 					'w_class' 	  => 'form-class',  // string.  The class to apply to the wrapper element of the input field.
 					'id'		  => 'text-field',  // string.  The ID to apply to the input field itself.
 					'class'		  => 'text-input',  // string.  The class to apply to the input field itself.
-					'label' 	  => __( 'Text Field', 'make-mini-mf' ),  // string.  The label to add to the front-end of the form.
-					'placeholder' => __( 'placeholder', 'make-mini-mf' ), // string.  The default value. If added to text field, this is added into the placeholder attribute.
+					'label' 	  => 'Text Field',  // string.  The label to add to the front-end of the form.
+					'placeholder' => 'placeholder', // string.  The default value. If added to text field, this is added into the placeholder attribute.
 					'name'	  	  => 'text[]',		// string.  The name field. If not set, the label is used instead. To create an array use []
-					'description' => __( '', 'make-mini-mf' ),			// string.  The description of the field. Normally useful for explaining the field for users on the front-end.
+					'description' => '',			// string.  The description of the field. Normally useful for explaining the field for users on the front-end.
 					'maxlength'   => 50,		    // integer. Enables max-length functionality.
 				),
 				'conditional' => array(	  // array.  Allows us to set conditional show/hiding of input fields based on certain conditions.
@@ -113,10 +113,10 @@
 					'w_class' 	  => 'form-title-class',
 					'id'		  => 'text-field',
 					'class'		  => 'text-input',
-					'label' 	  => __( 'TEXTAREA', 'make-mini-mf' ),
-					'placeholder' => __( 'textarea placeholder', 'make-mini-mf' ),
+					'label' 	  => 'TEXTAREA',
+					'placeholder' => 'textarea placeholder',
 					'name'	  	  => 'textarea',
-					'description' => __( 'My awesome textarea yo.', 'make-mini-mf' ),
+					'description' => 'My awesome textarea yo.',
 					'maxlength'   => 250,
 					'cols'		  => 30, // integer.  Set a column width if needed.
 					'rows'		  => 10, // integer.  Set a row width if needed.
@@ -131,15 +131,15 @@
 					'w_class' 	  => 'form-title-class',
 					'id'		  => 'text-field',
 					'class'		  => 'text-input',
-					'label' 	  => __( 'DROPDOWN', 'make-mini-mf' ),
+					'label' 	  => 'DROPDOWN',
 					'name'	  	  => 'dropdown',
-					'description' => __( 'dropdown', 'make-mini-mf' ),
+					'description' => 'dropdown',
 					'options'	  => array(	// Sets up our select drop down. Set each option field with $value => $label
-						'value1' => __( 'Value 1', 'make-mini-mf' ),
-						'value2' => __( 'Value 2', 'make-mini-mf' ),
-						'value3' => __( 'Value 3', 'make-mini-mf' ),
-						'value4' => __( 'Value 4', 'make-mini-mf' ),
-						'value5' => __( 'Value 5', 'make-mini-mf' ),
+						'value1' => 'Value 1',
+						'value2' => 'Value 2',
+						'value3' => 'Value 3',
+						'value4' => 'Value 4',
+						'value5' => 'Value 5',
 					),
 				),
 			),
@@ -152,16 +152,16 @@
 					'w_class' 	  => 'form-title-class',
 					'id'		  => 'text-field',
 					'class'		  => 'text-input',
-					'label' 	  => __( 'MULTISELECT', 'make-mini-mf' ),
+					'label' 	  => 'MULTISELECT',
 					'name'	  	  => 'multiselect',
-					'description' => __( 'dropdown', 'make-mini-mf' ),
+					'description' => 'dropdown',
 					'size'	  => 2, // New field, unique to Multiselect. This allows us to specify how many fields we want to show before the rest is shown with scrolling
 					'options'	  => array(	// Sets up our select drop down. Set each option field with $value => $label
-						'value1' => __( 'Value 1', 'make-mini-mf' ),
-						'value2' => __( 'Value 2', 'make-mini-mf' ),
-						'value3' => __( 'Value 3', 'make-mini-mf' ),
-						'value4' => __( 'Value 4', 'make-mini-mf' ),
-						'value5' => __( 'Value 5', 'make-mini-mf' ),
+						'value1' => 'Value 1',
+						'value2' => 'Value 2',
+						'value3' => 'Value 3',
+						'value4' => 'Value 4',
+						'value5' => 'Value 5',
 					),
 				),
 			),
@@ -174,9 +174,9 @@
 					'w_class' 	  => 'form-title-class',
 					'id'		  => 'text-field',
 					'class'		  => 'text-input',
-					'label' 	  => __( 'NUMBER', 'make-mini-mf' ),
+					'label' 	  => 'NUMBER',
 					'name'	  	  => 'number',
-					'description' => __( '', 'make-mini-mf' ),
+					'description' => '',
 					'options'	  => array(	// Add our minimum and maximum fields if we want to
 						'minimum' => 1, // Should be positive integers only
 						'maximum' => 10,
@@ -192,13 +192,13 @@
 					'w_class' 	  => 'form-title-class',
 					'id'		  => 'text-field',
 					'class'		  => 'text-input',
-					'label' 	  => __( 'CHECKBOX', 'make-mini-mf' ),
+					'label' 	  => 'CHECKBOX',
 					'name'	  	  => 'checkbox',
-					'description' => __( '', 'make-mini-mf' ),
+					'description' => '',
 					'options'	  => array(	// Add the names of each checkbox. All of these will be saved to one field as an array
-						'option-1' => __( 'Option 1', 'make-mini-mf' ),
-						'option-2' => __( 'Option 2', 'make-mini-mf' ),
-						'option-3' => __( 'Option 3', 'make-mini-mf' ),
+						'option-1' => 'Option 1',
+						'option-2' => 'Option 2',
+						'option-3' => 'Option 3',
 					),
 				),
 			),
@@ -342,7 +342,7 @@
 				$author_meta = get_the_author_meta( 'display_name', $author_id );
 
 				if ( $current_user->ID != $data['author_id'] )
-					exit( sprintf( __( 'You do not have the proper privileges to edit this application! Only \'<em>$s</em>\' is allowed to edit.', 'make-mini-mf' ), esc_html( $author_meta ) );
+					exit( sprintf( __( 'You do not have the proper privileges to edit this application! Only \'<em>$s</em>\' is allowed to edit.', 'make-mini-mf' ), esc_html( $author_meta ) ) );
 			}
 
 			// First we want to clean everything...
