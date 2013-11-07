@@ -6,8 +6,7 @@
 	 * These forms are built on and customized from Cole Geissinger's custom form builder class, FormFlow. https://github.com/colegeissinger/formflow
 	 *
 	 * @version  0.1
-	 * @since    0.1
-	 * @author Cole Geissinger <cgeissinger@makermedia.com>
+	 * @since    1.0a-11062013
 	 */
 	
 
@@ -28,10 +27,10 @@
 	 * @return void
 	 *
 	 * @version 0.1
-	 * @since   0.1
+	 * @since   1.0a-11062013
 	 */
 	function mf_applications_resources() {
-		wp_enqueue_style( 'mf-applications-default', get_stylesheet_directory_uri() . '/plugins/applications/assets/css/application-forms.css' );
+		wp_enqueue_style( 'mf-applications-default', get_stylesheet_directory_uri() . '/plugins/applications/assets/css/application-forms.css', null, THEME_VERSION );
 	}
 	add_action( 'wp_enqueue_scripts', 'mf_applications_resources' );
 

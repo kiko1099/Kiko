@@ -5,9 +5,8 @@
 	 *
 	 * This contains all the cool jazz that makes this plugin work.
 	 *
-	 * @author  Cole Geissinger <cgeissinger@makermedia.com>
 	 * @version 0.1
-	 * @since   0.1
+	 * @since   1.0a-11062013
 	 */
 	class MF_Applications {
 
@@ -16,7 +15,7 @@
 		 * @var boolean
 		 *
 		 * @version  0.1
-		 * @since    0.1
+		 * @since    1.0a-11062013
 		 */
 		private $form_debug = false;
 
@@ -26,17 +25,17 @@
 		 * @var associate multidimensional array
 		 *
 		 * @version  0.1
-		 * @since    0.1
+		 * @since    1.0a-11062013
 		 */
-		private $demo_5settings = array(
-			'title' => 'Form Title',
-			'description' => 'This is my form description, if I want one...',
+		private $demo_settings = array(
+			'title' => __( 'Form Title', 'make-mini-mf'),
+			'description' => __( 'This is my form description, if I want one...', 'make-mini-mf' ),
 			'label_left' => false,				// Define where if you want labels to left or stacked
 			'args' => array(
 				'class' => 'form-class',
 				'id' => ''
 			),
-			'submission' => 'refresh', // Two options. 'ajax' or 'refresh'
+			'submission' => 'refresh', // Two options. 'ajax' or 'refresh' NOTE: ajax is not ready yet ;)
 			'method' => 'post', // The method to use when submitting, POST or GET.
 			'security' => array(
 				'input_id' => 'ff-submitted', // The value to set when submitting our form.
@@ -59,7 +58,7 @@
 		 * @var associate multidimensional array
 		 *
 		 * @version  0.1
-		 * @since    0.1
+		 * @since    1.0a-11062013
 		 */
 		private $demo_form = array(
 			array(
@@ -72,9 +71,9 @@
 					'id'		  => 'text-field',
 					'class'		  => 'text-input',
 					'label' 	  => 'Text Field',
-					'placeholder' => 'TEXT sdagusdhgsuh',
+					'placeholder' => __( 'TEXT sdagusdhgsuh', 'make-mini-mf'),
 					'name'	  	  => 'first-text',
-					'description' => 'asfddsf',
+					'description' => __( 'asfddsf', 'make-mini-mf' ),
 					'maxlength'   => 50,
 				),
 			),
@@ -87,10 +86,10 @@
 					'w_class' 	  => 'form-class',  // string.  The class to apply to the wrapper element of the input field.
 					'id'		  => 'text-field',  // string.  The ID to apply to the input field itself.
 					'class'		  => 'text-input',  // string.  The class to apply to the input field itself.
-					'label' 	  => 'Text Field',  // string.  The label to add to the front-end of the form.
-					'placeholder' => 'placeholder', // string.  The default value. If added to text field, this is added into the placeholder attribute.
+					'label' 	  => __( 'Text Field', 'make-mini-mf' ),  // string.  The label to add to the front-end of the form.
+					'placeholder' => __( 'placeholder', 'make-mini-mf' ), // string.  The default value. If added to text field, this is added into the placeholder attribute.
 					'name'	  	  => 'text[]',		// string.  The name field. If not set, the label is used instead. To create an array use []
-					'description' => '',			// string.  The description of the field. Normally useful for explaining the field for users on the front-end.
+					'description' => __( '', 'make-mini-mf' ),			// string.  The description of the field. Normally useful for explaining the field for users on the front-end.
 					'maxlength'   => 50,		    // integer. Enables max-length functionality.
 				),
 				'conditional' => array(	  // array.  Allows us to set conditional show/hiding of input fields based on certain conditions.
@@ -114,10 +113,10 @@
 					'w_class' 	  => 'form-title-class',
 					'id'		  => 'text-field',
 					'class'		  => 'text-input',
-					'label' 	  => 'TEXTAREA',
-					'placeholder' => 'textarea placeholder',
+					'label' 	  => __( 'TEXTAREA', 'make-mini-mf' ),
+					'placeholder' => __( 'textarea placeholder', 'make-mini-mf' ),
 					'name'	  	  => 'textarea',
-					'description' => 'My awesome textarea yo.',
+					'description' => __( 'My awesome textarea yo.', 'make-mini-mf' ),
 					'maxlength'   => 250,
 					'cols'		  => 30, // integer.  Set a column width if needed.
 					'rows'		  => 10, // integer.  Set a row width if needed.
@@ -132,15 +131,15 @@
 					'w_class' 	  => 'form-title-class',
 					'id'		  => 'text-field',
 					'class'		  => 'text-input',
-					'label' 	  => 'DROPDOWN',
+					'label' 	  => __( 'DROPDOWN', 'make-mini-mf' ),
 					'name'	  	  => 'dropdown',
-					'description' => 'dropdown',
+					'description' => __( 'dropdown', 'make-mini-mf' ),
 					'options'	  => array(	// Sets up our select drop down. Set each option field with $value => $label
-						'value1' => 'Value 1',
-						'value2' => 'Value 2',
-						'value3' => 'Value 3',
-						'value4' => 'Value 4',
-						'value5' => 'Value 5',
+						'value1' => __( 'Value 1', 'make-mini-mf' ),
+						'value2' => __( 'Value 2', 'make-mini-mf' ),
+						'value3' => __( 'Value 3', 'make-mini-mf' ),
+						'value4' => __( 'Value 4', 'make-mini-mf' ),
+						'value5' => __( 'Value 5', 'make-mini-mf' ),
 					),
 				),
 			),
@@ -153,16 +152,16 @@
 					'w_class' 	  => 'form-title-class',
 					'id'		  => 'text-field',
 					'class'		  => 'text-input',
-					'label' 	  => 'MULTISELECT',
+					'label' 	  => __( 'MULTISELECT', 'make-mini-mf' ),
 					'name'	  	  => 'multiselect',
-					'description' => 'dropdown',
+					'description' => __( 'dropdown', 'make-mini-mf' ),
 					'size'	  => 2, // New field, unique to Multiselect. This allows us to specify how many fields we want to show before the rest is shown with scrolling
 					'options'	  => array(	// Sets up our select drop down. Set each option field with $value => $label
-						'value1' => 'Value 1',
-						'value2' => 'Value 2',
-						'value3' => 'Value 3',
-						'value4' => 'Value 4',
-						'value5' => 'Value 5',
+						'value1' => __( 'Value 1', 'make-mini-mf' ),
+						'value2' => __( 'Value 2', 'make-mini-mf' ),
+						'value3' => __( 'Value 3', 'make-mini-mf' ),
+						'value4' => __( 'Value 4', 'make-mini-mf' ),
+						'value5' => __( 'Value 5', 'make-mini-mf' ),
 					),
 				),
 			),
@@ -175,9 +174,9 @@
 					'w_class' 	  => 'form-title-class',
 					'id'		  => 'text-field',
 					'class'		  => 'text-input',
-					'label' 	  => 'NUMBER',
+					'label' 	  => __( 'NUMBER', 'make-mini-mf' ),
 					'name'	  	  => 'number',
-					'description' => '',
+					'description' => __( '', 'make-mini-mf' ),
 					'options'	  => array(	// Add our minimum and maximum fields if we want to
 						'minimum' => 1, // Should be positive integers only
 						'maximum' => 10,
@@ -193,13 +192,13 @@
 					'w_class' 	  => 'form-title-class',
 					'id'		  => 'text-field',
 					'class'		  => 'text-input',
-					'label' 	  => 'CHECKBOX',
+					'label' 	  => __( 'CHECKBOX', 'make-mini-mf' ),
 					'name'	  	  => 'checkbox',
-					'description' => '',
+					'description' => __( '', 'make-mini-mf' ),
 					'options'	  => array(	// Add the names of each checkbox. All of these will be saved to one field as an array
-						'option-1' => 'Option 1',
-						'option-2' => 'Option 2',
-						'option-3' => 'Option 3',
+						'option-1' => __( 'Option 1', 'make-mini-mf' ),
+						'option-2' => __( 'Option 2', 'make-mini-mf' ),
+						'option-3' => __( 'Option 3', 'make-mini-mf' ),
 					),
 				),
 			),
@@ -207,21 +206,11 @@
 
 
 		/**
-		 * The current version of this plugin
-		 * @var string
-		 *
-		 * @version 0.1
-		 * @since   0.1
-		 */
-		private $plugin_version = '0.1';
-
-
-		/**
 		 * Custom Settings when no settings exist
 		 * @var associate multidimensional array
 		 *
 		 * @version  0.1
-		 * @since    0.1
+		 * @since    1.0a-11062013
 		 */
 		private $settings;
 
@@ -231,7 +220,7 @@
 		 * @var associate multidimensional array
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private $form;
 
@@ -241,7 +230,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		public function __construct( $settings = array(), $form = array() ) {
 
@@ -251,8 +240,8 @@
 			// Pass our custom Form or else get the default (only for development)
 			$this->form     = ( empty( $form ) && $this->form_debug ) ? $this->demo_form : $form;
 
-			// If we want to save the form on refresh, let's do that
-			if ( $this->settings['submission'] == 'refresh' )
+			// If we want to save the form on refresh, let's do that. AJAX saving coming soon!
+			if ( isset( $this->settings['submission'] ) && $this->settings['submission'] == 'refresh' )
 				$this->form_action_refresh();
 
 		}
@@ -263,7 +252,7 @@
 		 * @return boolean
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		public function has_form_fields() {
 			if ( empty( $this->form ) || is_null( $this->form ) ) {
@@ -279,12 +268,12 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		public function no_items() {
-			$output = '<h3>These are not the forms you are looking for...</h3>';
-			$output .= '<p>Whooooops! Looks like there are no forms to process..</p>';
-			$output .= '<p>Make sure you provide an array of form fields to output.</p>';
+			$output = '<h3>' . __( 'These are not the forms you are looking for...', 'make-mini-mf' ) . '</h3>';
+			$output .= '<p>' . __( 'Whooooops! Looks like there are no forms to process...', 'make-mini-mf' ) . '</p>';
+			$output .= '<p>' . __( 'Make sure you provide an array of form fields to output.', 'make-mini-mf' ) . '</p>';
 
 			echo $output;
 		}
@@ -295,7 +284,7 @@
 		 * @return void
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function form_action_refresh() {
 
@@ -332,7 +321,7 @@
 		 * @return void
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function form_save_post( $data ) {
 
@@ -353,7 +342,7 @@
 				$author_meta = get_the_author_meta( 'display_name', $author_id );
 
 				if ( $current_user->ID != $data['author_id'] )
-					exit( 'You do not have the proper privileges to edit this application! Only \'<em>' . esc_html( $author_meta ) . '</em>\' is allowed to edit.' );
+					exit( sprintf( __( 'You do not have the proper privileges to edit this application! Only \'<em>$s</em>\' is allowed to edit.', 'make-mini-mf' ), esc_html( $author_meta ) );
 			}
 
 			// First we want to clean everything...
@@ -393,7 +382,7 @@
 		 * @return array
 		 *
 		 * @version  0.1
-		 * @since    0.1
+		 * @since    1.0a-11062013
 		 */
 		private function form_clean_data( $data ) {
 
@@ -447,7 +436,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function fields( $data, $alignment_left = false ) {
 
@@ -539,12 +528,14 @@
 
 		/**
 		 * Check our conditionals and setup the right data attribute for use in JavaScript validation
+		 * This is quiet a ways from being ready... soon!
+		 * 
 		 * @param  string  $type  The type of input field we want to return
 		 * @param  array   $args  An array of arguments to pass to the input field functions
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function check_conditionals( $conditionals ) {
 
@@ -562,7 +553,7 @@
 		 * @return void
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_field( $type, $args, $data ) {
 
@@ -626,7 +617,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_text_field( $args, $data ) {
 
@@ -672,7 +663,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_textarea( $args, $data ) {
 
@@ -721,7 +712,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_dropdown( $args, $data ) {
 
@@ -762,7 +753,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_multiselect( $args, $data ) {
 
@@ -802,7 +793,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_number_field( $args, $data ) {
 
@@ -849,7 +840,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_checkbox( $args, $data ) {
 
@@ -905,7 +896,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_radio( $args, $data ) {
 
@@ -961,7 +952,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_image_upload( $args, $data ) {
 
@@ -996,7 +987,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_file_upload( $args, $data ) {
 
@@ -1008,7 +999,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_date_field( $args, $data ) {
 
@@ -1020,7 +1011,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_phone_field( $args, $data ) {
 
@@ -1032,7 +1023,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_url_field( $args, $data ) {
 
@@ -1071,7 +1062,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_hidden_field( $args, $data ) {
 
@@ -1110,7 +1101,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_html_block( $args, $data ) {
 
@@ -1122,7 +1113,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_section_wrapper( $args, $data ) {
 
@@ -1134,7 +1125,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_page_break( $args, $data ) {
 
@@ -1147,7 +1138,7 @@
 		 * @return Array/Boolean
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		private function get_application_data() {
 
@@ -1167,13 +1158,13 @@
 		 * @return mixed
 		 *
 		 * @version 0.1
-		 * @since   0.1
+		 * @since   1.0a-11062013
 		 */
 		public function display_form() {
 
 			// Only load these forms when the user is logged in.
 			if ( ! is_user_logged_in() )
-				exit( 'Sorry, you must have an account and be logged in to view the application form!' );
+				exit( __( 'Sorry, you must have an account and be logged in to view the application form!', 'make-mini-mf' ) );
 
 			// Get our custom form settings
 			$settings = $this->settings;
@@ -1221,7 +1212,7 @@
 		 * @return boolean
 		 *
 		 * @version  0.1
-		 * @since    0.1
+		 * @since    1.0a-11062013
 		 */
 		private function in_array_r( $needle, $haystack, $strict = false ) {
 		    foreach ( $haystack as $item ) {
