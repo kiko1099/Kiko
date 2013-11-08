@@ -74,7 +74,6 @@ class Sponsor_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 
-		var_dump( $instance );
 		if ( isset( $instance[ 'title' ] ) ) {
 			$title = $instance[ 'title' ];
 		}
