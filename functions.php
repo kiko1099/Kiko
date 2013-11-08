@@ -12,7 +12,7 @@
 
 
 	// Set a theme version :)
-	define( 'THEME_VERSION', '1.0a-11062013' );
+	define( 'THEME_VERSION', '1.0a-11082013' );
 
 
 	/**

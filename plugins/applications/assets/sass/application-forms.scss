@@ -9,15 +9,39 @@
 			label {
 				display:inline-block;
 			}
-			&.radio {
-				margin-left:18px;
+			&.radio [type="radio"] {
+				float:none;
+				margin:0 5px 0 3px;
+				position:relative;
+				top:-2px;
 			}
 			.form-field {
 				margin-bottom:20px;
 				&.hidden {
 					margin-bottom:0;
 				}
+				input[type="text"], textarea {
+					display:block;
+					width:80%;
+				}
+				textarea {
+					height:100px;
+				}
+				input[type="checkbox"] {
+					margin-right:5px;
+					margin-left:3px;
+					vertical-align:top;
+				}
+				.checkboxes, .radio {
+					label {
+						font-weight:normal;
+					}
+				}
 			}
+		}
+		.ff_description {
+			font-style:italic;
+			margin-bottom:5px;
 		}
 		li.left {
 			label {
@@ -38,6 +62,8 @@
 	label {
 		display:block;
 		font-weight:bold;
+		max-width:95%;
+		margin-bottom:0;
 	}
 
 	legend {
