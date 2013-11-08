@@ -85,10 +85,10 @@ class Sponsor_Widget extends WP_Widget {
 		if ( isset( $instance[ 'category' ] ) ) {
 			$category = $instance[ 'category' ];
 		}
-		
+
 		$terms = get_terms( 'link_category' );
 		if ( $terms ) {
-			echo '<select>';
+			echo '<select name="' . $this->get_field_name('category') . '" id="' . $this->get_field_id('category') .'" class="widefat">';
 			foreach( $terms as $term ) {
 				echo '<option id="' . $this->get_field_id( 'category' ) . '" name="' . $this->get_field_name( 'category' ) .'" value=' . esc_attr( $term->slug ) . ' ' .  selected( $this->get_field_name( 'category' ), $term->slug ) . '>' . esc_html( $term->name ) . '</option>';
 			}
