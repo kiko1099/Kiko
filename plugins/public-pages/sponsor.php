@@ -157,7 +157,7 @@ class Sponsor_Widget extends WP_Widget {
 
 } // class Sponsor_Widget
 
-// register Foo_Widget widget
+// register Sponsor_Widget widget
 function register_sponsor_widget() {
     register_widget( 'Sponsor_Widget' );
 }
