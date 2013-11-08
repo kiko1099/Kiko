@@ -3,13 +3,16 @@
 	// Load some resources
 	require_once( 'plugins/applications/applications.php' );
 	require_once( 'plugins/public-pages/makers.php' );
+	require_once( 'plugins/public-pages/sponsor.php' );
 	require_once( 'post-types/application.php' );
 	require_once( 'post-types/event-items.php' );
 	require_once( 'taxonomies/type.php' );
 	require_once( 'taxonomies/location.php' );
 	require_once( 'taxonomies/faire.php' );
 	require_once( 'taxonomies/group.php' );
-
+	
+	// Allow the link manager
+	add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
 	// Set a theme version :)
 	define( 'THEME_VERSION', '1.0a-11062013' );
