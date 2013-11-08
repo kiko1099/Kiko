@@ -15,7 +15,7 @@
 	add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
 	// Set a theme version :)
-	define( 'THEME_VERSION', '1.0a-11062013' );
+	define( 'THEME_VERSION', '0.5a' );
 
 
 	/**
@@ -24,7 +24,7 @@
 	 * @return html
 	 */
 	function make_dev_notification() { ?>
-		<div id="message" class="error"><p>This theme is under development and is not ready for public useage. Please use another theme.</p></div>
+		<div id="message" class="error"><p>This theme is under development and is not ready for public useage. <a href="https://github.com/Make-Magazine/minimakerfaire-original">We recommend our original Mini Maker Faire theme</a>.</p></div>
 	<?php }
 	add_action( 'admin_notices', 'make_dev_notification' );
 
@@ -109,50 +109,6 @@
 
 
 	/**
-	 * Register some custom post statues for just the applications
-	 * @return void
-	 */
-	function make_set_post_statuses() {
-		register_post_status( 'proposed', array(
-			'label' => _x( 'Proposed', 'post' ),
-			'public' => false,
-			'exclude_from_search' => true,
-			'show_in_admin_all_list' => true,
-			'show_in_admin_status_list' => true,
-			'label_count' => _n_noop( 'Unread <span class="count">(%s)</span>', 'Unread <span class="count">(%s)</span>' ),
-		) );
-	}
-	add_action( 'init', 'make_set_post_statuses' );
-
-
-	function make_add_post_status() {
-		global $post;
-
-		if ( $post->post_type == 'application' ) {
-			if ( $post->post_status == 'proposed' ) {
-				$complete = ' selected="selected"';
-				$label = '<span id="post-status-display">Proposed</span>';
-			}
-
-			echo '<script>jQuery(document).ready(function($){$("select#post_status").append("<option value="proposed"' . '></option></script>';
-		}
-	}
-
-	/**
-	 * Make the 'accepted' status public so that forms can be shown
-	 *
-	 * @see http://vip-support.automattic.com/tickets/16382
-	 */
-	add_action( 'init', function() {
-		global $wp_post_statuses;
-
-		if ( isset( $wp_post_statuses['accepted'] ) )
-			$wp_post_statuses['accepted']->public = true;
-
-	}, 400 );
-
-
-	/**
 	 * Register Widgetized areas
 	 * @return void
 	 */
@@ -178,8 +134,9 @@
 	}
 	add_action( 'widgets_init', 'makerfaire_widgets_init' );
 
+
 	/**
-	 * Deprecate code or uneeded for MMF below?
+	 * Deprecated code or uneeded for MMF below?
 	 */
 	
 	function makerfaire_get_news() {
@@ -188,50 +145,6 @@
 		return $output;
 	}
 	add_shortcode('news', 'makerfaire_get_news');
-
-
-	function makerfaire_get_beat() {
-		$url = 'http://makezine.com/beat-reports/';
-		$output = wpcom_vip_file_get_contents( $url, 3, 60*60,  array( 'obey_cache_control_header' => false ) );
-		return $output;
-	}
-
-	add_shortcode('mf_beat_reports', 'makerfaire_get_beat');
-
-	function makerfaire_sidebar_news() {
-
-		$url = 'http://makezine.com/maker-faire-news-sidebar/';
-		$output = wpcom_vip_file_get_contents( $url, 3, 60*60,  array( 'obey_cache_control_header' => false ) );
-		return $output;
-
-	}
-
-	function makerfaire_get_slider() {
-		$url = 'http://makezine.com/maker-faire-featured-slider/';
-		$output = wpcom_vip_file_get_contents( $url, 3, 60,  array( 'obey_cache_control_header' => false ) );
-		return $output;
-	}
-	add_shortcode( 'mf-featured-slider', 'makerfaire_get_slider' );
-
-
-	function makerfaire_index_feed($n = 4) {
-		$f = fetch_feed('http://makezine.com/tag/maker-faire/feed/'); 
-
-		if(is_wp_error($f))
-			return false;
-
-		$max = $f->get_item_quantity($n); 	
-		$fs  = $f->get_items(0, $max);
-		
-		$res = array();
-		foreach($fs as $i)
-		{
-			$img = preg_match('/<img(.*?)src="(.*?)"(.*?)>/i', html_entity_decode($i->get_description()), $m);
-			$res[] = array('i'=>$i, 'img'=>$m[0], 'src'=>$m[2]);
-		}
-
-		return $res;
-	}
 
 
 	function makerfaire_carousel_shortcode( $atts ) {

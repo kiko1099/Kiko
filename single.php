@@ -26,8 +26,8 @@
 						
 						<div class="media-body well">
 						
-							<p>Posted by <?php the_author_posts_link(); ?> | <a href="<?php the_permalink(); ?>"><?php the_time('l F jS, Y g:i A'); ?></a></p>
-							<p>Categories: <?php the_category(', '); ?> | <?php comments_popup_link(); ?> <?php edit_post_link('Fix me...', ' | '); ?></p>
+							<p><?php _e( 'Posted by', 'make-mini-mf' ); ?> <?php the_author_posts_link(); ?> | <?php the_time('l F jS, Y g:i A'); ?></p>
+							<p><?php _e( 'Categories:' ); ?> <?php the_category(', '); ?> | <?php comments_popup_link(); ?> <?php edit_post_link( __( ' | Edit', 'make-mini-mf' ) ); ?></p>
 
 						</div>
 
@@ -39,8 +39,8 @@
 
 				<ul class="pager">
 			
-					<li class="previous"><?php previous_posts_link('&larr; Previous Page'); ?></li>
-					<li class="next"><?php next_posts_link('Next Page &rarr;'); ?></li>
+					<li class="previous"><?php previous_posts_link( __( '&larr; Previous Page', 'make-mini-mf' ) ); ?></li>
+					<li class="next"><?php next_posts_link( __( 'Next Page &rarr;', 'make-mini-mf' ) ); ?></li>
 				
 				</ul>
 			

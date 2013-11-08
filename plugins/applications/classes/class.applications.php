@@ -6,7 +6,7 @@
 	 * This contains all the cool jazz that makes this plugin work.
 	 *
 	 * @version 0.1
-	 * @since   1.0a-11062013
+	 * @since   0.5a
 	 */
 	class MF_Applications {
 
@@ -15,7 +15,7 @@
 		 * @var boolean
 		 *
 		 * @version  0.1
-		 * @since    1.0a-11062013
+		 * @since    0.5a
 		 */
 		private $form_debug = false;
 
@@ -25,7 +25,7 @@
 		 * @var associate multidimensional array
 		 *
 		 * @version  0.1
-		 * @since    1.0a-11062013
+		 * @since    0.5a
 		 */
 		private $demo_settings = array(
 			'title' => 'Form Title',
@@ -58,7 +58,7 @@
 		 * @var associate multidimensional array
 		 *
 		 * @version  0.1
-		 * @since    1.0a-11062013
+		 * @since    0.5a
 		 */
 		private $demo_form = array(
 			array(
@@ -210,7 +210,7 @@
 		 * @var associate multidimensional array
 		 *
 		 * @version  0.1
-		 * @since    1.0a-11062013
+		 * @since    0.5a
 		 */
 		private $settings;
 
@@ -220,7 +220,7 @@
 		 * @var associate multidimensional array
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private $form;
 
@@ -230,7 +230,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		public function __construct( $settings = array(), $form = array() ) {
 
@@ -252,7 +252,7 @@
 		 * @return boolean
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		public function has_form_fields() {
 			if ( empty( $this->form ) || is_null( $this->form ) ) {
@@ -268,7 +268,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		public function no_items() {
 			$output = '<h3>' . __( 'These are not the forms you are looking for...', 'make-mini-mf' ) . '</h3>';
@@ -284,7 +284,7 @@
 		 * @return void
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function form_action_refresh() {
 
@@ -321,7 +321,7 @@
 		 * @return void
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function form_save_post( $data ) {
 
@@ -382,7 +382,7 @@
 		 * @return array
 		 *
 		 * @version  0.1
-		 * @since    1.0a-11062013
+		 * @since    0.5a
 		 */
 		private function form_clean_data( $data ) {
 
@@ -412,6 +412,8 @@
 							case 'url':
 								$clean_data[ $key ] = esc_url( $value );
 								break;
+							case 'email':
+								$clean_data[ $key ] = sanitize_email( $value );
 							case 'text':
 							case 'dropdown':
 							case 'multiselect':
@@ -436,7 +438,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function fields( $data, $alignment_left = false ) {
 
@@ -535,7 +537,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function check_conditionals( $conditionals ) {
 
@@ -553,12 +555,13 @@
 		 * @return void
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_field( $type, $args, $data ) {
 
 			switch ( $type ) {
 				case 'text':
+				case 'email':
 					return $this->get_text_field( $args, $data );
 					break;
 				case 'textarea':
@@ -617,7 +620,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_text_field( $args, $data ) {
 
@@ -663,7 +666,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_textarea( $args, $data ) {
 
@@ -712,7 +715,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_dropdown( $args, $data ) {
 
@@ -753,7 +756,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_multiselect( $args, $data ) {
 
@@ -793,7 +796,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_number_field( $args, $data ) {
 
@@ -840,7 +843,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_checkbox( $args, $data ) {
 
@@ -896,7 +899,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_radio( $args, $data ) {
 
@@ -928,6 +931,8 @@
 								if ( isset( $args['class'] ) )
 									$output .= ' class="' . esc_attr( $args['class'] ) . '"';
 
+								
+
 							$output .= ' /> ';
 
 							$output .= '<label for="' . esc_attr( $id ) . '">' . esc_html( $name ) . '</label>';
@@ -952,7 +957,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_image_upload( $args, $data ) {
 
@@ -987,7 +992,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_file_upload( $args, $data ) {
 
@@ -999,7 +1004,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_date_field( $args, $data ) {
 
@@ -1011,7 +1016,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_phone_field( $args, $data ) {
 
@@ -1023,7 +1028,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_url_field( $args, $data ) {
 
@@ -1062,7 +1067,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_hidden_field( $args, $data ) {
 
@@ -1101,10 +1106,28 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_html_block( $args, $data ) {
 
+			if ( ! empty( $args ) && ! empty( $args['value'] ) ) {
+				$output = '<div ';
+
+					// Check for an ID
+					if ( isset( $args['id'] ) )
+						$output .= ' id="' . esc_attr( $args['id'] ) . '"';
+
+					// Check for a class
+					if ( isset( $args['class'] ) )
+						$output .= ' class="' . esc_attr( $args['class'] ) . '"';
+
+				$output .= '>';
+
+					// Output our content
+					$output .= wp_filter_post_kses( $args['value'] );
+
+				$output .= '</div>';
+			}
 		}
 
 
@@ -1113,7 +1136,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_section_wrapper( $args, $data ) {
 
@@ -1125,7 +1148,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_page_break( $args, $data ) {
 
@@ -1138,7 +1161,7 @@
 		 * @return Array/Boolean
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		private function get_application_data() {
 
@@ -1158,7 +1181,7 @@
 		 * @return mixed
 		 *
 		 * @version 0.1
-		 * @since   1.0a-11062013
+		 * @since   0.5a
 		 */
 		public function display_form() {
 
@@ -1212,7 +1235,7 @@
 		 * @return boolean
 		 *
 		 * @version  0.1
-		 * @since    1.0a-11062013
+		 * @since    0.5a
 		 */
 		private function in_array_r( $needle, $haystack, $strict = false ) {
 		    foreach ( $haystack as $item ) {
