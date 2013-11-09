@@ -6,7 +6,7 @@
 	 * Contains all the form options and settings for the exhibits
 	 *
 	 * @version 0.1
-	 * @since   1.0a-11072013
+	 * @since   0.5a
 	 */
 	class MF_Applications_Form {
 

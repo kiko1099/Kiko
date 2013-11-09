@@ -19,7 +19,6 @@
 	// Set a theme version :)
 	define( 'THEME_VERSION', '0.5a' );
 
-
 	/**
 	 * Sets a notification that we are using an alpha version of the theme
 	 * TODO: Remove when we are ready to go live 
