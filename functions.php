@@ -4,6 +4,8 @@
 	require_once( 'plugins/applications/applications.php' );
 	require_once( 'plugins/public-pages/makers.php' );
 	require_once( 'plugins/public-pages/sponsor.php' );
+	require_once( 'plugins/tgm-plugin-activation/class-tgm-plugin-activation.php' );
+	require_once( 'plugins/tgm-plugin-activation/plugins.php' );
 	require_once( 'post-types/application.php' );
 	require_once( 'post-types/event-items.php' );
 	require_once( 'taxonomies/type.php' );
