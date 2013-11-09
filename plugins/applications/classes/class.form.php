@@ -15,7 +15,7 @@
 		 * @var associate multidimensional array
 		 *
 		 * @version  0.1
-		 * @since    1.0a-11072013
+		 * @since    0.5a
 		 */
 		public $settings = array(
 			'title' => 'Submit your project for ____ Mini Maker Faire 2013',
