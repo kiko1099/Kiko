@@ -37,7 +37,6 @@
 	}
 	add_action( 'wp_enqueue_scripts', 'mf_applications_resources' );
 
-
 	/**
 	 * The shortcode that displays the application form
 	 * @param  array  $atts    The array of attributes passed to the shortcode

@@ -1004,8 +1004,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.5a
-		 */
+		 * @since   0.5a		 */
 		private function get_date_field( $args, $data ) {
 
 		}
@@ -1016,8 +1015,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.5a
-		 */
+		 * @since   0.5a		 */
 		private function get_phone_field( $args, $data ) {
 
 		}
@@ -1028,8 +1026,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.5a
-		 */
+		 * @since   0.5a		 */
 		private function get_url_field( $args, $data ) {
 
 			if ( ! empty( $args ) ) {
@@ -1067,8 +1064,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.5a
-		 */
+		 * @since   0.5a		 */
 		private function get_hidden_field( $args, $data ) {
 
 			if ( ! empty( $args ) ) {
@@ -1106,8 +1102,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.5a
-		 */
+		 * @since   0.5a		 */
 		private function get_html_block( $args, $data ) {
 
 			if ( ! empty( $args ) && ! empty( $args['value'] ) ) {
@@ -1136,8 +1131,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.5a
-		 */
+		 * @since   0.5a		 */
 		private function get_section_wrapper( $args, $data ) {
 
 		}
@@ -1148,8 +1142,7 @@
 		 * @return string
 		 *
 		 * @version 0.1
-		 * @since   0.5a
-		 */
+		 * @since   0.5a		 */
 		private function get_page_break( $args, $data ) {
 
 		}
@@ -1161,8 +1154,7 @@
 		 * @return Array/Boolean
 		 *
 		 * @version 0.1
-		 * @since   0.5a
-		 */
+		 * @since   0.5a		 */
 		private function get_application_data() {
 
 			// Check if we are passing an ID (must be a positive number!)
@@ -1181,8 +1173,7 @@
 		 * @return mixed
 		 *
 		 * @version 0.1
-		 * @since   0.5a
-		 */
+		 * @since   0.5a		 */
 		public function display_form() {
 
 			// Only load these forms when the user is logged in.
