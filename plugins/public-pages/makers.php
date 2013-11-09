@@ -75,9 +75,9 @@ function mf_public_blurb( $json ) {
 		
 		if ( $json->project_website || $json->project_video ) {
 			echo '<hr>';
-			echo ( !empty( $json->project_website ) ) ? '<a class="btn btn-info" href="'. esc_url( $json->project_website ) . '"><i class="icon-home icon-white"></i> Website</a>' : null ;
+			echo ( !empty( $json->project_website ) ) ? '<a class="btn btn-info" href="'. esc_url( $json->project_website ) . '"><i class="icon-home icon-white"></i> ' . __( 'Website', 'make-mini-mf' ) . '</a>' : null ;
 			echo ' ';
-			echo ( !empty( $json->project_video ) ) ? '<a class="btn btn-info" href="'. esc_url( $json->project_video ) . '"><i class="icon-facetime-video icon-white"></i> Video</a>' : null ;
+			echo ( !empty( $json->project_video ) ) ? '<a class="btn btn-info" href="'. esc_url( $json->project_video ) . '"><i class="icon-facetime-video icon-white"></i> ' . __( 'Video', 'make-mini-mf' ) . '</a>' : null ;
 			if (!empty( $json->project_video ) ) {
 				echo '<hr />';
 				echo wpcom_vip_wp_oembed_get( esc_url( $json->project_video ), array( 'width'=>620 ) );
@@ -96,7 +96,7 @@ function mf_public_blurb( $json ) {
 		
 		if ( $json->maker == 'One maker') {
 			if (!empty($json->maker_name)) {
-				echo '<h3>About the Maker</h3>';
+				echo '<h3>' . __( 'About the Maker', 'make-mini-mf' ) . '</h3>';
 				echo '<div class="media">';
 				if (!empty($json->maker_photo)) {
 					echo '<img src="' . wpcom_vip_get_resized_remote_image_url( $json->maker_photo, 130, 130, true ) . '" class="media-object thumbnail pull-left"/>';
@@ -112,7 +112,7 @@ function mf_public_blurb( $json ) {
 			}
 		} elseif ($json->maker == 'A group or association') {
 			if (!empty($json->group_name)) {
-				echo '<h3>Group Association</h3>';
+				echo '<h3>' . __( 'Group Association', 'make-mini-mf' ) . '</h3>';
 				echo '<div class="media">';
 				if (!empty($json->group_photo)) {
 					echo '<img src="' . wpcom_vip_get_resized_remote_image_url( $json->group_photo, 130, 130, true ) . '" class="media-object thumbnail pull-left" />';
@@ -121,14 +121,14 @@ function mf_public_blurb( $json ) {
 				echo '<h4>' . wp_kses_post( $json->group_name ) . '</h4>';
 				echo '<p>' . wp_kses_post( $json->group_bio ) . '</p>';
 				if (!empty($json->group_website)) {
-					echo '<a class="btn btn-info" href="'.esc_url( $json->group_website ) . '"><i class="icon-home icon-white"></i> Website</a>';
+					echo '<a class="btn btn-info" href="'.esc_url( $json->group_website ) . '"><i class="icon-home icon-white"></i> ' . __( 'Website', 'make-mini-mf' ) . '</a>';
 				}
 				echo '</div></div>';	
 			}
 		} elseif ( $json->maker == 'A list of makers' ) {
 			if (!empty($json->m_maker_name)) {
 				$i = 0;
-				echo '<h3>Makers:</h3>';
+				echo '<h3>' . __( 'Makers', 'make-mini-mf' ) . ':</h3>';
 				$makers = $json->m_maker_name;
 				foreach ($makers as $maker) {
 					echo '<div class="media">';
@@ -166,9 +166,9 @@ function mf_public_blurb( $json ) {
 		
 		if ( $json->presentation_website || $json->video ) {
 			echo '<hr>';
-			echo ( !empty( $json->presentation_website ) ) ? '<a class="btn btn-info" href="'. esc_url( $json->presentation_website ) . '"><i class="icon-home icon-white"></i> Website</a>' : null ;
+			echo ( !empty( $json->presentation_website ) ) ? '<a class="btn btn-info" href="'. esc_url( $json->presentation_website ) . '"><i class="icon-home icon-white"></i> ' . __( 'Website', 'make-mini-mf' ) . '</a>' : null ;
 			echo ' ';
-			echo ( !empty( $json->video ) ) ? '<a class="btn btn-info" href="'. esc_url( $json->video ) . '"><i class="icon-facetime-video icon-white"></i> Video</a>' : null ;
+			echo ( !empty( $json->video ) ) ? '<a class="btn btn-info" href="'. esc_url( $json->video ) . '"><i class="icon-facetime-video icon-white"></i> ' . __( 'Video', 'make-mini-mf' ) . '</a>' : null ;
 			if (!empty( $json->video ) ) {
 				echo '<hr />';
 				echo wpcom_vip_wp_oembed_get( esc_url( $json->video ), array( 'width'=>620 ) );
@@ -187,7 +187,7 @@ function mf_public_blurb( $json ) {
 
 		if (!empty($json->presenter_name)) {
 			$i = 0;
-			echo '<h3>Presenters:</h3>';
+			echo '<h3>' . __( 'Presenters', 'make-mini-mf' ) . ':</h3>';
 			$makers = $json->presenter_name;
 			foreach ($makers as $maker) {
 				echo '<div class="media">';
@@ -216,7 +216,7 @@ function mf_public_blurb( $json ) {
 		}
 
 		if (!empty($json->group_name)) {
-			echo '<h3>Group Association</h3>';
+			echo '<h3>' . __( 'Group Association', 'make-mini-mf' ) . '</h3>';
 			echo '<div class="media">';
 			if (!empty($json->group_photo)) {
 				echo '<img src="' . wpcom_vip_get_resized_remote_image_url( $json->group_photo, 130, 130, true ) . '" class="media-object thumbnail pull-left" />';
@@ -225,7 +225,7 @@ function mf_public_blurb( $json ) {
 			echo '<h4>' . wp_kses_post( $json->group_name ) . '</h4>';
 			echo '<p>' . wp_kses_post( $json->group_bio ) . '</p>';
 			if (!empty($json->group_website)) {
-				echo '<a class="btn btn-info" href="'.esc_url( $json->group_website ) . '"><i class="icon-home icon-white"></i> Website</a>';
+				echo '<a class="btn btn-info" href="'.esc_url( $json->group_website ) . '"><i class="icon-home icon-white"></i> ' . __( 'Website', 'make-mini-mf' ) . '</a>';
 			}
 			echo '</div></div>';	
 		}
@@ -243,9 +243,9 @@ function mf_public_blurb( $json ) {
 		
 		if ( $json->performer_website || $json->performer_video ) {
 			echo '<hr>';
-			echo ( !empty( $json->performer_website ) ) ? '<a class="btn btn-info" href="'. esc_url( $json->performer_website ) . '"><i class="icon-home icon-white"></i> Website</a>' : null ;
+			echo ( !empty( $json->performer_website ) ) ? '<a class="btn btn-info" href="'. esc_url( $json->performer_website ) . '"><i class="icon-home icon-white"></i> ' . __( 'Website', 'make-mini-mf' ) . '</a>' : null ;
 			echo ' ';
-			echo ( !empty( $json->performer_video ) ) ? '<a class="btn btn-info" href="'. esc_url( $json->performer_video ) . '"><i class="icon-facetime-video icon-white"></i> Video</a>' : null ;
+			echo ( !empty( $json->performer_video ) ) ? '<a class="btn btn-info" href="'. esc_url( $json->performer_video ) . '"><i class="icon-facetime-video icon-white"></i> ' . __( 'Video', 'make-mini-mf' ) . '</a>' : null ;
 			if (!empty( $json->performer_video ) ) {
 				echo '<hr />';
 				echo wpcom_vip_wp_oembed_get( esc_url( $json->performer_video ), array( 'width'=>620 ) );
@@ -255,7 +255,7 @@ function mf_public_blurb( $json ) {
 
 		$terms = get_the_terms( get_the_ID(), array( 'category', 'post_tag' ) );
 		if ($terms) {
-			echo '<p>Explore Similar Projects in these Areas: ';
+			echo '<p>' . __( 'Explore Similar Projects in these Areas: ', 'make-mini-mf' );
 			foreach ( $terms as $idx => $term ) {
 				echo ( $idx != 0 ) ? ', <a href="' . get_term_link( $term ) . '">' . $term->name . '</a>' : '<a href="' . get_term_link( $term ) . '">' . $term->name . '</a>';
 			}
@@ -266,7 +266,7 @@ function mf_public_blurb( $json ) {
 	// Let's get the grouped projects
 	$terms = get_the_terms( get_the_ID(), 'group' );
 	if ( $terms ) {
-		echo '<h3>Other exhibits in this group:</h3>';
+		echo '<h3>' . __( 'Other exhibits in this group:', 'make-mini-mf' ) . '</h3>';
 		foreach ( $terms as $term ) {
 			$args = array( 
 				'tax_query' => array(
@@ -276,7 +276,7 @@ function mf_public_blurb( $json ) {
 						'terms' => $term->term_id
 					),
 				),
-				'post_type'		=> 'mf_form',
+				'post_type'		=> 'application',
 				'post_status'	=> 'accepted',
 				'posts_per_page' => 100
 				);
@@ -307,10 +307,9 @@ function mf_featured_makers( $atts ) {
 	$args = array( 
 		'meta_key'		=> '_ef_editorial_meta_checkbox_featured', 
 		'meta_value'	=> true,
-		'post_type'		=> 'mf_form',
+		'post_type'		=> 'application',
 		'post_status'	=> 'accepted',
-		'faire'			=> 'maker-faire-bay-area-2013'
-		);
+	);
 	$args = wp_parse_args( $atts, $args );
 	$query = new WP_Query( $args );
 	$output = '<div id="featuredMakers" class="carousel slide"><div class="carousel-inner">';
@@ -402,7 +401,7 @@ function mf_get_the_maker_image( $json ) {
 
 
 function the_mf_content() {
-	if ( get_post_type() == 'mf_form' ) {
+	if ( get_post_type() == 'application' ) {
 		$content = get_the_content();
 		$json = json_decode( mf_convert_newlines( mf_character_fixer( str_replace( "\'", "'", $content ) ) ) );
 		echo '<div class="row"><div class="span2">';
@@ -492,94 +491,6 @@ add_filter('the_content', function($content) {
 );
 
 
-/**
- * Function to spit out Smaller Featured Slider for home page
- */
-add_shortcode( 'featured_home', 'mf_featured_makers_home' );
-function mf_featured_makers_home() {
-	$args = array( 
-		'meta_key'		=> '_ef_editorial_meta_checkbox_featured', 
-		'meta_value'	=> true,
-		'post_type'		=> 'mf_form',
-		'post_status'	=> 'accepted',
-		);
-	$query = new WP_Query( $args );
-	$output = '<div id="featuredMakers" class="carousel slide">';
-	$output .= '<div class="meetthemakers"><h3><a href="http://makerfaire.com/bayarea-2013/maker-info/">Meet the Makers</a></h3></div>';
-	$output .= '<div class="banner">';
-	$output .= '<h3 class="red">May 18<sup>th</sup> - 19<sup>th</sup> 2013</h3>';
-	$output .= '<div class="bordered">';
-	$output .= '<h3>San Mateo County Events Center, CA</h3>';
-	$output .= '<h4>Saturday 10am - 8pm</h4>';
-	$output .= '<h4>Sunday 10am - 6pm</h4>';
-	$output .= '</div>';
-	$output .= '<h4 class="blue"><a href="http://makerfaire2013.eventbrite.com/">Get Tickets</a></h4>';
-	$output .= '<h4 class="blue"><a href="http://makerfaire.com/alt">How to Get There</a></h4>';
-	$output .= '<h4 class="blue"><a href="http://makerfaire.com/bayarea-2013/schedule/">Program &amp; Schedule</a></h4>';
-	$output .= '<h4 class="blue"><a href="http://app.net/makerfaire">Download the App</a></h4>';
-	$output .= '</div>';
-	$output .= '<div class="carousel-inner">';
-	$i = 1;
-	while ( $query->have_posts() ) :
-	$query->the_post();
-		$content = get_the_content();
-		$json = json_decode( str_replace( "\'", "'", $content ) );
-		if ($i == 1) {
-			$output .= '<div class="item active ' . get_the_ID() . '">';
-		} else {
-			$output .= '<div class="item ' . get_the_ID() . '">';
-		}
-		$output .= '<a href="' . get_permalink( get_the_ID() ) . '">';
-		if ( !empty( $json->presenter_photo[0] ) ) {
-			$output .= '<img src="' . wpcom_vip_get_resized_remote_image_url( $json->presenter_photo[0], 620, 230, true ) . '" class="Test"/>';
-			$output .= '<!--Presenter Photo Array-->';
-		} elseif (!empty( $json->project_photo ) ) {
-			$output .= '<img src="' . wpcom_vip_get_resized_remote_image_url( $json->project_photo, 620, 230, true ) . '" class="" />';
-			$output .= '<!--Project Photo-->';
-		} elseif ( !empty( $json->performer_photo ) ) {
-			$output .= '<img src="' . wpcom_vip_get_resized_remote_image_url( $json->performer_photo, 620, 230, true ) . '" class="" />';
-			$output .= '<!--Performer Photo-->';
-		} elseif ( !empty( $json->maker_photo ) ) {
-			$output .= '<img src="' . wpcom_vip_get_resized_remote_image_url( $json->maker_photo, 620, 230, true ) . '" class="" />';
-			$output .= '<!--Maker Photo-->';
-		} elseif ( !empty( $json->presentation_photo ) ) {
-			$output .= '<img src="' . wpcom_vip_get_resized_remote_image_url( $json->presentation_photo, 620, 230, true ) . '" class=""/>';
-			$output .= '<!--Presentation Photo-->';
-		} elseif ( isset( $json->presenter_photo) ) {
-			$output .= '<img src="' . wpcom_vip_get_resized_remote_image_url( $json->presenter_photo, 620, 230, true ) . '" class=""/>';
-			$output .= '<!--Presenter Photo-->';
-		}
-		$output .= '</a></div>';
-		$i++;
-	endwhile;
-	$output .= '</div></div>';
-
-	wp_reset_postdata();
-	return $output;
-}
-
-/**
- * Add the description to stages the hard way.
- */
-function mf_stage_description( $term ) {
-	$output = '';
-	if ( $term->term_id == 192277117 ) {
-		$output .= '<div class="alert alert-info">' . Markdown( 'Conversations about emerging tech, new practices &amp; community' ) . '</div>';
-	} elseif ( $term->term_id == 192277675 ) {
-		$output .= '<div class="alert alert-info">' . Markdown( 'How-to on microcontrollers, robotics, and circuit boards' ) . '</div>';
-	} elseif ( $term->term_id == 192277685 ) {
-		$output .= '<div class="alert alert-info">' . Markdown( '3DP machines, materials, makers and applications' ) . '</div>';
-	} elseif ( $term->term_id == 192277716 ) {
-		$output .= '<div class="alert alert-info">' . Markdown( 'Product demos and tech how-tos' ) . '</div>';
-	} elseif ( $term->term_id == 192277788 ) {
-		$output .= '<div class="alert alert-info">' . Markdown( 'Design, craft, sustainability and domestic arts' ) . '</div>';
-	} elseif ( $term->term_id == 192277738 ) {
-		$output .= '<div class="alert alert-info">' . Markdown( 'Teachers and makers on making in education' ) . '</div>';
-	} elseif ( !empty( $term->description ) ) {
-		$output .= '<div class="alert alert-info">' . Markdown( $term->description ) . '</div>';
-	}
-	return $output;
-}
 
 /**
  * Generate the schedule for the schedule page. Based on a shortcode. Pass in the ID, and get the schedule for both days.
@@ -596,7 +507,7 @@ function mf_schedule( $atts ) {
 		$term = wpcom_vip_get_term_by( 'id', $location, 'location');
 		$url = get_term_link( $term );
 		if ( !is_wp_error( $url ) ) {
-			$output .= '<a href="' . esc_url( home_url( '/stage-schedule/?location=' . $term->slug ) ) . '" class="pull-right" style="position:relative; top:7px;"><img src="' . get_stylesheet_directory_uri() . '/images/print-ico.png" alt="Print this schedule" /></a>';
+			$output .= '<a href="' . esc_url( home_url( '/stage-schedule/?location=' . $term->slug ) ) . '" class="pull-right" style="position:relative; top:7px;"><img src="' . get_stylesheet_directory_uri() . '/images/print-ico.png" alt="' . __( 'Print this schedule', 'make-mini-mf' ) . '" /></a>';
 			$output .= '<h2><a href="'. esc_url( $url ) . '">' . esc_html( $term->name ) . '</a></h2>';
 			$output .= mf_stage_description( $term );
 		}

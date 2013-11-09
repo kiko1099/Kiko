@@ -1,53 +1,45 @@
 <?php get_header(); ?>
 
-<div class="clear"></div>
+	<div class="clear"></div>
+	<div class="container">
+		<div class="row">
 
-<div class="container">
-
-	<div class="row">
-
-		<div class="content span8">
+			<div class="content span8">
 			
-			<div class="page-header">
-				
-				<h1><?php echo single_cat_title(); ?></h1>	
-				
-			</div>
+				<div class="page-header">
+					<h1><?php echo single_cat_title(); ?></h1>	
+				</div>
 			
-			<?php get_search_form(); ?>
+				<?php get_search_form(); ?>
 			
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				
-				<article <?php post_class(); ?>>
-
-					<!--<p class="categories"><?php the_category(', '); ?></p>-->
+					<article <?php post_class(); ?>>
+						<?php the_mf_content(); ?>
+					</article>
 					
-					<?php the_mf_content(); ?>
+					<hr>
 				
-				</article>
-				<hr>
+				<?php endwhile; ?>
+
+					<ul class="pager">
 				
-			<?php endwhile; ?>
-
-				<ul class="pager">
-			
-					<li class="previous"><?php previous_posts_link('&larr; Previous Page'); ?></li>
-					<li class="next"><?php next_posts_link('Next Page &rarr;'); ?></li>
+						<li class="previous"><?php previous_posts_link( __( '&larr; Previous Page', 'make-mini-mf' ) ); ?></li>
+						<li class="next"><?php next_posts_link( __( 'Next Page &rarr;', 'make-mini-mf' ) ); ?></li>
+					
+					</ul>
 				
-				</ul>
-			
-			<?php else: ?>
-			
-				<p><?php _e( 'Sorry, no posts matched your criteria.', 'make-mini-mf' ); ?></p>
-			
-			<?php endif; ?>
+				<?php else: ?>
+				
+					<p><?php _e( 'Sorry, no posts matched your criteria.', 'make-mini-mf' ); ?></p>
+				
+				<?php endif; ?>
 
-		</div><!--Content-->
+			</div><!--Content-->
 
-		<?php get_sidebar(); ?>
+			<?php get_sidebar(); ?>
 
-	</div>
-	
-</div><!--Container-->
+		</div>
+	</div><!--Container-->
 
 <?php get_footer(); ?>
