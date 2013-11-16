@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/**
+ * Single Page Template
+ */
+get_header(); ?>
 
 <div class="clear"></div>
 

@@ -49,6 +49,7 @@
 		 */
 		public $form = array(
 			array(
+				// TODO: This ideally would just pull from the type taxonomy, using the already set types. Would allow for better queries.
 				'id'   	   => 1,
 				'type' 	   => 'radio',
 				'required' => true,
@@ -115,6 +116,7 @@
 				),
 			),
 			array(
+				// TODO: Make this an actual image upload.
 				'id'   	   => 6,
 				'type' 	   => 'url',
 				'required' => false,
