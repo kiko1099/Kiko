@@ -13,17 +13,20 @@
 	require_once( 'taxonomies/faire.php' );
 	require_once( 'taxonomies/group.php' );
 
+	// Load ACF
 	define( 'ACF_LITE', true );
 	include_once('plugins/acf/advanced-custom-fields/acf.php' );
 	include_once('plugins/acf/acf-options-page/acf-options-page.php' );
 	include_once('plugins/acf/acf-repeater/acf-repeater.php' );
 	include_once('plugins/acf/advanced-custom-field-repeater-collapser/acf_repeater_collapser.php' );
+
 	
 	// Allow the link manager
 	add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
 	// Set a theme version :)
 	define( 'THEME_VERSION', '0.5a' );
+	
 
 	/**
 	 * Sets a notification that we are using an alpha version of the theme
