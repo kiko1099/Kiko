@@ -57,26 +57,14 @@
 					<div class="span12">
 						<div class="nav navi">
 
-							<?php
-								$defaults = array(
-									'theme_location'  => '',
-									'menu'            => 'header-menu',
+							<?php 
+								wp_nav_menu( array(
+									'theme_location'  => 'header-menu',
 									'container'       => false,
-									'container_class' => '',
-									'container_id'    => '',
-									'menu_class'      => 'menu',
-									'menu_id'         => '',
-									'echo'            => true,
-									'fallback_cb'     => 'wp_page_menu',
-									'before'          => '',
-									'after'           => '',
 									'link_before'     => '<div>',
 									'link_after'      => '</div>',
 									'items_wrap'      => '<ul id="%1$s" class="%2$s nav nav-pills">%3$s</ul>',
-									'depth'           => 1,
-									'walker'          => ''
-								);
-								wp_nav_menu( $defaults );
+								) );
 							?>
 					
 						</div><!--end nav wrapper-->

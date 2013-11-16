@@ -12,6 +12,12 @@
 	require_once( 'taxonomies/location.php' );
 	require_once( 'taxonomies/faire.php' );
 	require_once( 'taxonomies/group.php' );
+
+	define( 'ACF_LITE', true );
+	include_once('plugins/acf/advanced-custom-fields/acf.php' );
+	include_once('plugins/acf/acf-options-page/acf-options-page.php' );
+	include_once('plugins/acf/acf-repeater/acf-repeater.php' );
+	include_once('plugins/acf/advanced-custom-field-repeater-collapser/acf_repeater_collapser.php' );
 	
 	// Allow the link manager
 	add_filter( 'pre_option_link_manager_enabled', '__return_true' );
@@ -39,6 +45,13 @@
 	 */
 	if ( ! function_exists( 'make_theme_setup' ) ) :
 		function make_theme_setup() {
+
+			/*
+	         * Make theme available for translation.
+	         * Translations can be filed in the /languages/ directory.
+	         */
+	        load_theme_textdomain( 'make-mini-mf', get_template_directory() . '/languages' );
+
 
 			/**
 			 * Add default posts and comments RSS feed links to head
@@ -75,10 +88,12 @@
 			 * This theme uses wp_nav_menu() in one location.
 			 */
 			register_nav_menus( array(
-				'header-menu' => __( 'Header Menu' )
+				'header-menu' => __( 'Header Menu', 'make-mini-mf' ),
+				'footer-menu' => __( 'Footer Menu', 'make-mini-mf' ),
 			) );
 		}
 	endif;
+	add_action( 'after_setup_theme', 'make_theme_setup' );
 
 
 	/**
@@ -91,22 +106,10 @@
 
 		// JavaScripts
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), THEME_VERSION );
-		wp_enqueue_script( 'make-countdown', get_stylesheet_directory_uri() . '/js/jquery.countdown.js', array( 'jquery' ), THEME_VERSION, true );
+		wp_enqueue_script( 'make-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), THEME_VERSION, true );
+		wp_enqueue_script( 'make-countdown', get_stylesheet_directory_uri() . '/js/jquery.countdown..min.js', array( 'jquery' ), THEME_VERSION, true );
 	}
 	add_action( 'wp_enqueue_scripts', 'make_add_resources' );
-
-
-	/**
-	 * Enqueue any custom scripts or styles for the admin area
-	 * TODO: remove this first version in favor of the Post Locker Plugin - http://wordpress.org/plugins/hide-post-locker/
-	 * @return void
-	 */
-	function make_add_admin_resources() {
-		if ( get_post_type() == 'mf_form' && is_admin() )
-			wp_enqueue_script( 'make-custom-post-lock', get_stylesheet_directory_uri() . '/js/expand-post-edit.js', array( 'jquery' ), THEME_VERSION );
-	}
-	add_action( 'admin_enqueue_scripts', 'make_add_admin_resources' );
 
 
 	/**
@@ -132,22 +135,45 @@
 			'after_title' => '</h4>',
 		) );
 
+		register_sidebar( array(
+			'name' => 'Footer 1',
+			'id' => 'footer-1',
+			'before_widget' => '<div id="footer-widget-1" class="span4">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3>',
+			'after_title' => '</h3>',
+		) );
+
+		register_sidebar( array(
+			'name' => 'Footer 2',
+			'id' => 'footer-2',
+			'before_widget' => '<div id="footer-widget-2" class="span4">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3>',
+			'after_title' => '</h3>',
+		) );
+
+		register_sidebar( array(
+			'name' => 'Footer 3',
+			'id' => 'footer-3',
+			'before_widget' => '<div id="footer-widget-3" class="span4">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3>',
+			'after_title' => '</h3>',
+		) );
+
 	}
 	add_action( 'widgets_init', 'makerfaire_widgets_init' );
 
 
 	/**
-	 * Deprecated code or uneeded for MMF below?
+	 * Adds the bootstrap carousel nav links
+	 * @param  [type] $atts [description]
+	 * @return [type]       [description]
+	 *
+	 * @version  0.1
+	 * @since    0.5a
 	 */
-	
-	function makerfaire_get_news() {
-		$url = 'http://makezine.com/maker-faire-news/';
-		$output = wpcom_vip_file_get_contents( $url, 3, 60,  array( 'obey_cache_control_header' => false ) );
-		return $output;
-	}
-	add_shortcode('news', 'makerfaire_get_news');
-
-
 	function makerfaire_carousel_shortcode( $atts ) {
 		extract( shortcode_atts( array( 'id' => 'biggins'), $atts ) );
 		
@@ -156,152 +182,78 @@
 	}
 	add_shortcode( 'arrows', 'makerfaire_carousel_shortcode' );
 
-	function makerfaire_data_toggle() {
-		return '<ul class="nav nav-tabs">
-			<li class="active"><a data-toggle="tab" href="#ny2012">New York 2012</a></li>
-			<li><a data-toggle="tab" href="#d2012">Detroit 2012</a></li>
-			<li><a data-toggle="tab" href="#ba2012">Bay Area 2012</a></li>
-			<li><a data-toggle="tab" href="#ny2011">New York 2011</a></li>
-			<li><a data-toggle="tab" href="#d2011">Detroit 2011</a></li>
-			<li><a data-toggle="tab" href="#ba2011">Bay Area 2011</a></li>
-			<li><a data-toggle="tab" href="#ny2010">New York 2010</a></li>
-			<li><a data-toggle="tab" href="#d2010">Detroit 2010</a></li>
-			<li><a data-toggle="tab" href="#ba2010">Bay Area 2010</a></li>
-			<li><a data-toggle="tab" href="#ba2009">Bay Area 2009</a></li>
-			<li><a data-toggle="tab" href="#a2008">Austin 2008</a></li>
-			<li><a data-toggle="tab" href="#ba2008">Bay Area 2008</a></li>
-			<li><a data-toggle="tab" href="#a2007">Austin 2007</a></li>
-		</ul>';
-	}
 
-	add_shortcode( 'tabs', 'makerfaire_data_toggle' );
-
-	function makerfaire_newsletter_shortcode() {
-
-			$output = '<form action="http://makermedia.createsend.com/t/r/s/jjuruj/" method="post" class="form-horizontal" id="subForm">
-				<fieldset>
-				
-				<legend>Sign up for the Maker Faire Newsletter</legend>
-				
-				<div class="control-group">
-					<label for="name" class="control-label">Your Name:</label>
-					<div class="controls">
-						<input type="text" class="input-xlarge" name="cm-name" id="name" size="35" />
-					</div>
-				</div>
-				
-				<div class="control-group">
-					<label class="control-label" for="jjuruj-jjuruj">Your Email:</label>
-					<div class="controls">
-						<input type="text" class="input-xlarge" name="cm-jjuruj-jjuruj" id="jjuruj-jjuruj" size="35" />
-					</div>
-				</div>
-				
-				<div class="control-group">
-					<label class="control-label" for="cm621683"></label>
-					<div class="controls">
-						<label class="checkbox">
-							<input type="checkbox" name="cm-fo-dduult" id="cm621683" value="621683" />
-							Please let me know when the Call for Makers goes out!
-						</label>
-					</div>
-				</div>
-				
-				<div class="control-group">
-					<label class="control-label" for="optionsCheckbox">Any chance we could interest you in...</label>
-					<div class="controls">
-					</div>
-					<div class="controls">
-						<label for="MAKENewsletter" class="checkbox">
-							<input type="checkbox" name="cm-ol-jjuylk" id="MAKENewsletter" />
-							The MAKE Newsletter?
-						</label>
-					</div>
-				</div>
-				
-				<div class="form-actions">
-					<input type="submit" value="Subscribe" class="btn btn-primary" />
-				</div>
-				
-				</fieldset>
-			</form>';
-
+	/**
+	 * TODO: Add description
+	 * @return [type] [description]
+	 */
+	function makerfaire_get_news() {
+		$url = 'http://makezine.com/maker-faire-news/';
+		$output = wpcom_vip_file_get_contents( $url, 3, 60,  array( 'obey_cache_control_header' => false ) );
 		return $output;
 	}
+	add_shortcode('news', 'makerfaire_get_news');
 
-	add_shortcode( 'newsletter', 'makerfaire_newsletter_shortcode' );
 
-	function makerfaire_news_rss() { ?>
-		<div class="newsies">
-			<div class="news post">
-				<h3 style="color: #fc040c;"><a href="http://makezine.com/tag/maker-faire/">Latest Maker Faire News</a></h3>
-				<?php 
-				$fs = makerfaire_index_feed();
 
-				foreach($fs as $f) : $a = $f['i']->get_authors(); ?>
-					<h4><a href="<?php echo esc_url($f['i']->get_link()); ?>"><?php echo esc_html($f['i']->get_title()); ?></a></h4>
-					<div class="row">
-						<div class="span2">
-							<a href="<?php echo esc_url($f['i']->get_link()); ?>" title="<?php echo esc_attr($f['i']->get_title()); ?>"><img class="thumbnail faire-thumb " alt="<?php echo esc_attr($f['i']->get_title()); ?>" src="<?php echo esc_url($f['src']); ?>" /></a>
-						</div>
-						<div class="span6">
-						<?php echo str_replace(array($f['img'], '<p><a href="'.$f['i']->get_link().'">Read the full article on MAKE</a></p>'), '', html_entity_decode(esc_html($f['i']->get_description()))); ?>
-						<p class="read_more" style="margin:10px 0"><strong>
-						<a class="btn btn-primary btn-mini" href="<?php echo esc_url($f['i']->get_link()); ?>">Read full story &raquo;</a></strong></p>
-						
-							<ul class="unstyled">
-								<li>Posted by <?php echo esc_html($a[0]->name); ?> | <?php echo esc_html($f['i']->get_date()); ?></li>
-								<li>Categories: <?php foreach($f['i']->get_categories() as $cat) : echo esc_html($cat->term.', '); endforeach; ?></li>
-							</ul>
-						</div>
-					</div>
-				<?php endforeach; ?> 
-			</div>
-		</div>
-		<h4><a href="http://makezine.com/tag/maker-faire/">Read More &rarr;</a></h4>
-	<?php }
-
+	/**
+	 * Deprecated code or uneeded for MMF below?
+	 */
 	
 
 
-	function mf_quick_links_box() {
-		add_meta_box( 'quickly', 'Quick Links', 'mf_quick_links', 'mf_form' );
-	}
-	// This function echoes the content of our meta box
-	function mf_quick_links() {
-		$output = '<div id="project-id-search"><label for="project-id" class="screen-reader-text">Search by Project ID</label><input type="search" name="search-proj-id" id="project-id" /><input type="submit" value="Search by ID" id="search-submit" class="button" /></div><ul class="subsubsub">
-			<li class="all"><a href="edit.php?post_type=mf_form" class="current">All</a> |</li>
-			<li class="trash"><a href="edit.php?post_status=trash&amp;post_type=mf_form">Trash</a> |</li>
-			<li class="proposed"><a href="edit.php?post_status=proposed&amp;post_type=mf_form" title="Application proposed; waiting for acceptance.">Proposed</a> |</li>
-			<li class="waiting-for-info"><a href="edit.php?post_status=waiting-for-info&amp;post_type=mf_form" title="Question has been emailed to Maker, waiting for response.">Waiting for Info</a> |</li>
-			<li class="accepted"><a href="edit.php?post_status=accepted&amp;post_type=mf_form" title="Application is accepted to Maker Faire.">Accepted</a> |</li>
-			<li class="cancelled"><a href="edit.php?post_status=cancelled&amp;post_type=mf_form" title="Accepted application is cancelled; This project will not attend Maker Faire after all.">Cancelled</a> |</li>
-			<li class="in-progress"><a href="edit.php?post_status=in-progress&amp;post_type=mf_form" title="">In Progress</a></li>
-		</ul>
-		<div class="clear"></div>';
-		echo $output;
-	}
+	/**
+	 * TODO: Add description
+	 * @return [type] [description]
+	 */
+	function makerfaire_news_rss() { ?>
+		<div class="newsies">
+			<div class="news post">
+				<h3 style="color: #fc040c;"><a href="http://makezine.com/tag/maker-faire/"><?php _e( 'Latest Maker Faire News', 'make-mini-mf' ); ?></a></h3>
+				<?php $fs = makerfaire_index_feed();
 
-	if (is_admin())
-		add_action('admin_menu', 'mf_quick_links_box');
-		
+					foreach( $fs as $f ) : $a = $f['i']->get_authors(); ?>
+						<h4><a href="<?php echo esc_url($f['i']->get_link()); ?>"><?php echo esc_html($f['i']->get_title()); ?></a></h4>
+						<div class="row">
+							<div class="span2">
+								<a href="<?php echo esc_url($f['i']->get_link()); ?>" title="<?php echo esc_attr($f['i']->get_title()); ?>"><img class="thumbnail faire-thumb " alt="<?php echo esc_attr($f['i']->get_title()); ?>" src="<?php echo esc_url($f['src']); ?>" /></a>
+							</div>
+							<div class="span6">
+								<?php echo str_replace( array( $f['img'], '<p><a href="' . $f['i']->get_link() . '">Read the full article on MAKE</a></p>' ), '', html_entity_decode( esc_html( $f['i']->get_description() ) ) ); ?>
+								<p class="read_more" style="margin:10px 0"><strong><a class="btn btn-primary btn-mini" href="<?php echo esc_url( $f['i']->get_link() ); ?>"><?php _e( 'Read full story &raquo;', 'make-mini-mf' ); ?></a></strong></p>
+							
+								<ul class="unstyled">
+									<li><?php _e( 'Posted by', 'make-mini-mf' ); ?> <?php echo esc_html( $a[0]->name ); ?> | <?php echo esc_html( $f['i']->get_date() ); ?></li>
+									<li><?php _e( 'Categories:', 'make-mini-mf' ); ?> <?php foreach( $f['i']->get_categories() as $cat ) { echo esc_html( $cat->term . ', ' ); } ?></li>
+								</ul>
+							</div>
+						</div>
+					<?php endforeach;
+				?> 
+			</div>
+		</div>
+		<h4><a href="http://makezine.com/tag/maker-faire/"><?php _e( 'Read More &rarr;', 'make-mini-mf' ); ?></a></h4>
+	<?php }
+
+	
+	/**
+	 * TODO: Add description
+	 * @param  [type] $title [description]
+	 * @return [type]        [description]
+	 */
 	function mf_clean_title( $title ) {
-	    $title = str_replace('&nbsp;', ' ', $title);
+	    $title = str_replace( '&nbsp;', ' ', $title );
 	    return $title;
 	}
-	add_filter('the_title', 'mf_clean_title', 10, 2);
+	add_filter( 'the_title', 'mf_clean_title', 10, 2 );
 
 
-	function mf_release_shortcode() {
-		$request_id = (!empty($_REQUEST['id']) ? $_REQUEST['id'] : null);
-		$output = '<iframe src="' . esc_url( 'http://db.makerfaire.com/pa/' .  $request_id ) . '" width="620" height="2000" scrolling="auto" frameborder="0"> [Your user agent does not support frames or is currently configured not to display frames.] </iframe>';
-		return $output;
-	}
-
-	add_shortcode( 'release', 'mf_release_shortcode' );
-
-
-	add_filter( 'wp_kses_allowed_html', 'mf_allow_data_atts', 10, 2 );
+	/**
+	 * TODO: Add description
+	 * @param  [type] $allowedposttags [description]
+	 * @param  [type] $context         [description]
+	 * @return [type]                  [description]
+	 */
 	function mf_allow_data_atts( $allowedposttags, $context ) {
 		$tags = array( 'div', 'a', 'li' );
 		$new_attributes = array( 'data-toggle' => true );
@@ -313,11 +265,15 @@
 		
 		return $allowedposttags;
 	}
+	add_filter( 'wp_kses_allowed_html', 'mf_allow_data_atts', 10, 2 );
 
 
-	add_filter('tiny_mce_before_init', 'mf_filter_tiny_mce_before_init'); 
+	/**
+	 * TODO: Add description
+	 * @param  [type] $options [description]
+	 * @return [type]          [description]
+	 */
 	function mf_filter_tiny_mce_before_init( $options ) { 
-
 		if ( ! isset( $options['extended_valid_elements'] ) ) 
 			$options['extended_valid_elements'] = ''; 
 
@@ -327,18 +283,15 @@
 
 		return $options; 
 	}
+	add_filter( 'tiny_mce_before_init', 'mf_filter_tiny_mce_before_init' ); 
 
 
-	function mf_allow_my_post_types( $allowed_post_types ) {
-		$allowed_post_types[] = 'mf_form';
-		return $allowed_post_types;
-	}
-
-	add_filter( 'rest_api_allowed_post_types', 'mf_allow_my_post_types');
-
-
+	/**
+	 * TODO: Add description
+	 */
 	add_filter( 'jetpack_open_graph_tags', function( $tags ) {
 		global $post;
+
 		if ($post->post_type == 'mf_form') {
 			$json = json_decode( $post->post_content );
 			$tags['og:description'] = $json->public_description;	
@@ -349,7 +302,6 @@
 		
 		return $tags;
 	}, 10 );
-
 
 	/**
 	 * Hide Maker Faire applications from past faires

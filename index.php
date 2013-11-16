@@ -14,7 +14,7 @@
 
 					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
-					<p class="meta top">By <?php the_author_posts_link(); ?>, <?php the_time('Y/m/d \@ g:i a') ?></p>
+					<p class="meta top">By <?php the_author_posts_link(); ?>, <?php the_time( 'Y/m/d \@ g:i a' ) ?></p>
 
 					<?php the_content(); ?>
 
@@ -26,7 +26,7 @@
 						
 						<div class="media-body well">
 						
-							<p><?php _e( 'Posted by', 'make-mini-mf' ); ?> <?php the_author_posts_link(); ?> | <?php the_time('l F jS, Y g:i A'); ?></p>
+							<p><?php _e( 'Posted by', 'make-mini-mf' ); ?> <?php the_author_posts_link(); ?> | <?php the_time( 'l F jS, Y g:i A' ); ?></p>
 							<p><?php _e( 'Categories:' ); ?> <?php the_category(', '); ?> | <?php comments_popup_link(); ?> <?php edit_post_link( __( ' | Edit', 'make-mini-mf' ) ); ?></p>
 
 						</div>
@@ -39,14 +39,14 @@
 
 				<ul class="pager">
 			
-					<li class="previous"><?php previous_posts_link('&larr; Previous Page'); ?></li>
-					<li class="next"><?php next_posts_link('Next Page &rarr;'); ?></li>
+					<li class="previous"><?php previous_posts_link( __( '&larr; Previous Page', 'make-mini-mf' ) ); ?></li>
+					<li class="next"><?php next_posts_link( __( 'Next Page &rarr;', 'make-mini-mf' ) ); ?></li>
 				
 				</ul>
 			
-			<?php else: ?>
+			<?php else : ?>
 			
-				<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+				<p><?php _e( 'Sorry, no posts matched your criteria.', 'make-mini-mf' ); ?></p>
 			
 			<?php endif; ?>
 

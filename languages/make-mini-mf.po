@@ -1,0 +1,704 @@
+# Copyright (C) 2013 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: make-mini-mf 0.5\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2013-11-08 17:13-0800\n"
+"PO-Revision-Date: 2013-11-08 17:14-0800\n"
+"Last-Translator: \n"
+"Language-Team: Maker Media, Inc <minimakerfaire@makerfaire.com>\n"
+"Language: en_us\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_n:1,2;_x:1,2c;_ex:1,2x;esc_attr__;esc_attr_e;_;"
+"gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../archive.php:27 ../index.php:42 ../single.php:42
+msgid "&larr; Previous Page"
+msgstr ""
+
+#: ../archive.php:28 ../index.php:43 ../single.php:43
+msgid "Next Page &rarr;"
+msgstr ""
+
+#: ../functions.php:86
+msgid "Header Menu"
+msgstr ""
+
+#: ../functions.php:87
+msgid "Footer Menu"
+msgstr ""
+
+#: ../index.php:30 ../single.php:30
+msgid " | Edit"
+msgstr ""
+
+#: ../plugins/applications/classes/class.applications.php:274
+msgid "These are not the forms you are looking for..."
+msgstr ""
+
+#: ../plugins/applications/classes/class.applications.php:275
+msgid "Whooooops! Looks like there are no forms to process..."
+msgstr ""
+
+#: ../plugins/applications/classes/class.applications.php:276
+msgid "Make sure you provide an array of form fields to output."
+msgstr ""
+
+#: ../plugins/applications/classes/class.applications.php:345
+msgid ""
+"You do not have the proper privileges to edit this application! Only '<em>"
+"$s</em>' is allowed to edit."
+msgstr ""
+
+#: ../plugins/applications/classes/class.applications.php:1190
+msgid ""
+"Sorry, you must have an account and be logged in to view the application "
+"form!"
+msgstr ""
+
+#: ../plugins/public-pages/makers.php:78
+#: ../plugins/public-pages/makers.php:124
+#: ../plugins/public-pages/makers.php:169
+#: ../plugins/public-pages/makers.php:228
+#: ../plugins/public-pages/makers.php:246
+msgid "Website"
+msgstr ""
+
+#: ../plugins/public-pages/makers.php:80
+#: ../plugins/public-pages/makers.php:171
+#: ../plugins/public-pages/makers.php:248
+msgid "Video"
+msgstr ""
+
+#: ../plugins/public-pages/makers.php:99
+msgid "About the Maker"
+msgstr ""
+
+#: ../plugins/public-pages/makers.php:115
+#: ../plugins/public-pages/makers.php:219
+msgid "Group Association"
+msgstr ""
+
+#: ../plugins/public-pages/makers.php:131
+msgid "Makers"
+msgstr ""
+
+#: ../plugins/public-pages/makers.php:190
+msgid "Presenters"
+msgstr ""
+
+#: ../plugins/public-pages/makers.php:258
+msgid "Explore Similar Projects in these Areas: "
+msgstr ""
+
+#: ../plugins/public-pages/makers.php:269
+msgid "Other exhibits in this group:"
+msgstr ""
+
+#: ../plugins/public-pages/makers.php:510
+msgid "Print this schedule"
+msgstr ""
+
+#: ../plugins/public-pages/sponsor.php:76
+msgid "Sponsor Slider"
+msgstr ""
+
+#: ../plugins/public-pages/sponsor.php:77
+msgid "Sponsor Widgets"
+msgstr ""
+
+#: ../plugins/public-pages/sponsor.php:112
+msgid "New title"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:155
+#: ../plugins/tgm-plugin-activation/plugins.php:65
+msgid "Install Required Plugins"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:156
+#: ../plugins/tgm-plugin-activation/plugins.php:66
+msgid "Install Plugins"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:157
+#: ../plugins/tgm-plugin-activation/plugins.php:67
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:158
+msgid "Something went wrong."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:169
+#: ../plugins/tgm-plugin-activation/plugins.php:79
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:170
+msgid "Return to the dashboard"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:171
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1840
+#: ../plugins/tgm-plugin-activation/plugins.php:80
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:172
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1538
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:173
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:174
+msgid "Dismiss this notice"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1085
+msgid "External Link"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1090
+msgid "Private Repository"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1093
+msgid "Pre-Packaged"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1097
+msgid "WordPress Repository"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1100
+msgid "Required"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1100
+msgid "Recommended"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1103
+msgid "Not Installed"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1105
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1275
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1291
+msgid "Plugin"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1292
+msgid "Source"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1293
+#: ../taxonomies/type.php:19
+msgid "Type"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1294
+msgid "Status"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1312
+msgid "Install"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1313
+msgid "Activate"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1823
+msgid "Install package not available."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1824
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1825
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1826
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1827
+msgid "Plugin install failed."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1828
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1839
+msgid "Plugin activation failed."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1949
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1950
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1950
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1959
+msgid "Show Details"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1950
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1959
+msgid "Hide Details"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1951
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1952
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1956
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1957
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1958
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1959
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1960
+msgid "All installations have been completed."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1961
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2052
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/plugins.php:68
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: ../plugins/tgm-plugin-activation/plugins.php:81
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: ../post-types/application.php:14 ../post-types/application.php:17
+#: ../post-types/application.php:26
+msgid "Applications"
+msgstr ""
+
+#: ../post-types/application.php:15
+msgid "Application"
+msgstr ""
+
+#: ../post-types/application.php:16 ../post-types/application.php:18
+msgid "Add new application"
+msgstr ""
+
+#: ../post-types/application.php:19
+msgid "Edit application"
+msgstr ""
+
+#: ../post-types/application.php:20
+msgid "New application"
+msgstr ""
+
+#: ../post-types/application.php:21
+msgid "View application"
+msgstr ""
+
+#: ../post-types/application.php:22
+msgid "Search applications"
+msgstr ""
+
+#: ../post-types/application.php:23
+msgid "No applications found"
+msgstr ""
+
+#: ../post-types/application.php:24
+msgid "No applications found in trash"
+msgstr ""
+
+#: ../post-types/application.php:25
+msgid "Parent application"
+msgstr ""
+
+#: ../post-types/application.php:41
+#, php-format
+msgid ""
+"Application updated. <a target=\"_blank\" href=\"%s\">View application</a>"
+msgstr ""
+
+#: ../post-types/application.php:42
+msgid "Custom field updated."
+msgstr ""
+
+#: ../post-types/application.php:43
+msgid "Custom field deleted."
+msgstr ""
+
+#: ../post-types/application.php:44
+msgid "Application updated."
+msgstr ""
+
+#: ../post-types/application.php:46
+#, php-format
+msgid "Application restored to revision from %s"
+msgstr ""
+
+#: ../post-types/application.php:47
+#, php-format
+msgid "Application published. <a href=\"%s\">View application</a>"
+msgstr ""
+
+#: ../post-types/application.php:48
+msgid "Application saved."
+msgstr ""
+
+#: ../post-types/application.php:49
+#, php-format
+msgid ""
+"Application submitted. <a target=\"_blank\" href=\"%s\">Preview application</"
+"a>"
+msgstr ""
+
+#: ../post-types/application.php:50
+#, php-format
+msgid ""
+"Application scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href="
+"\"%2$s\">Preview application</a>"
+msgstr ""
+
+#: ../post-types/application.php:52
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: ../post-types/application.php:53
+#, php-format
+msgid ""
+"Application draft updated. <a target=\"_blank\" href=\"%s\">Preview "
+"application</a>"
+msgstr ""
+
+#: ../post-types/event-items.php:13 ../post-types/event-items.php:14
+msgid "Event Items"
+msgstr ""
+
+#: ../post-types/event-items.php:15 ../post-types/event-items.php:17
+msgid "Add a new event item"
+msgstr ""
+
+#: ../post-types/event-items.php:16 ../post-types/event-items.php:25
+msgid "Event items"
+msgstr ""
+
+#: ../post-types/event-items.php:18
+msgid "Edit event items"
+msgstr ""
+
+#: ../post-types/event-items.php:19
+msgid "New event item"
+msgstr ""
+
+#: ../post-types/event-items.php:20
+msgid "View event items"
+msgstr ""
+
+#: ../post-types/event-items.php:21
+msgid "Search event items"
+msgstr ""
+
+#: ../post-types/event-items.php:22
+msgid "No event items found"
+msgstr ""
+
+#: ../post-types/event-items.php:23
+msgid "No event items found in trash"
+msgstr ""
+
+#: ../post-types/event-items.php:24
+msgid "Parent event items"
+msgstr ""
+
+#: ../post-types/event-items.php:71
+msgid "Email Presenter Schedule"
+msgstr ""
+
+#: ../post-types/event-items.php:80
+msgid "Event Item Details"
+msgstr ""
+
+#: ../post-types/event-items.php:92
+msgid "Saturday"
+msgstr ""
+
+#: ../post-types/event-items.php:373
+msgid "View All Locations"
+msgstr ""
+
+#: ../taxonomies/faire.php:25 ../taxonomies/faire.php:39
+msgid "Faires"
+msgstr ""
+
+#: ../taxonomies/faire.php:26 ../taxonomies/faire.php:56
+msgid "Faire"
+msgstr ""
+
+#: ../taxonomies/faire.php:27
+msgid "Search faires"
+msgstr ""
+
+#: ../taxonomies/faire.php:28
+msgid "Popular faires"
+msgstr ""
+
+#: ../taxonomies/faire.php:29
+msgid "All faires"
+msgstr ""
+
+#: ../taxonomies/faire.php:30
+msgid "Parent faire"
+msgstr ""
+
+#: ../taxonomies/faire.php:31
+msgid "Parent faire:"
+msgstr ""
+
+#: ../taxonomies/faire.php:32
+msgid "Edit faire"
+msgstr ""
+
+#: ../taxonomies/faire.php:33
+msgid "Update faire"
+msgstr ""
+
+#: ../taxonomies/faire.php:34 ../taxonomies/faire.php:35
+msgid "New faire"
+msgstr ""
+
+#: ../taxonomies/faire.php:36
+msgid "Faires separated by comma"
+msgstr ""
+
+#: ../taxonomies/faire.php:37
+msgid "Add or remove faires"
+msgstr ""
+
+#: ../taxonomies/faire.php:38
+msgid "Choose from the most used faires"
+msgstr ""
+
+#: ../taxonomies/faire.php:77
+msgid "Select A Faire"
+msgstr ""
+
+#: ../taxonomies/group.php:18 ../taxonomies/group.php:32
+msgid "Groups"
+msgstr ""
+
+#: ../taxonomies/group.php:19
+msgid "Group"
+msgstr ""
+
+#: ../taxonomies/group.php:20
+msgid "Search groups"
+msgstr ""
+
+#: ../taxonomies/group.php:21
+msgid "Popular groups"
+msgstr ""
+
+#: ../taxonomies/group.php:22
+msgid "All groups"
+msgstr ""
+
+#: ../taxonomies/group.php:23
+msgid "Parent group"
+msgstr ""
+
+#: ../taxonomies/group.php:24
+msgid "Parent group:"
+msgstr ""
+
+#: ../taxonomies/group.php:25
+msgid "Edit group"
+msgstr ""
+
+#: ../taxonomies/group.php:26
+msgid "Update group"
+msgstr ""
+
+#: ../taxonomies/group.php:27 ../taxonomies/group.php:28
+msgid "New group"
+msgstr ""
+
+#: ../taxonomies/group.php:29
+msgid "Groups separated by comma"
+msgstr ""
+
+#: ../taxonomies/group.php:30
+msgid "Add or remove groups"
+msgstr ""
+
+#: ../taxonomies/group.php:31
+msgid "Choose from the most used groups"
+msgstr ""
+
+#: ../taxonomies/location.php:18 ../taxonomies/location.php:32
+msgid "Locations"
+msgstr ""
+
+#: ../taxonomies/location.php:19
+msgid "Location"
+msgstr ""
+
+#: ../taxonomies/location.php:20
+msgid "Search locations"
+msgstr ""
+
+#: ../taxonomies/location.php:21
+msgid "Popular locations"
+msgstr ""
+
+#: ../taxonomies/location.php:22
+msgid "All locations"
+msgstr ""
+
+#: ../taxonomies/location.php:23
+msgid "Parent location"
+msgstr ""
+
+#: ../taxonomies/location.php:24
+msgid "Parent location:"
+msgstr ""
+
+#: ../taxonomies/location.php:25
+msgid "Edit location"
+msgstr ""
+
+#: ../taxonomies/location.php:26
+msgid "Update location"
+msgstr ""
+
+#: ../taxonomies/location.php:27 ../taxonomies/location.php:28
+msgid "New location"
+msgstr ""
+
+#: ../taxonomies/location.php:29
+msgid "Locations separated by comma"
+msgstr ""
+
+#: ../taxonomies/location.php:30
+msgid "Add or remove locations"
+msgstr ""
+
+#: ../taxonomies/location.php:31
+msgid "Choose from the most used locations"
+msgstr ""
+
+#: ../taxonomies/type.php:18
+msgid "Types of Applications"
+msgstr ""
+
+#: ../taxonomies/type.php:20
+msgid "Search types"
+msgstr ""
+
+#: ../taxonomies/type.php:21
+msgid "Popular types"
+msgstr ""
+
+#: ../taxonomies/type.php:22
+msgid "All types"
+msgstr ""
+
+#: ../taxonomies/type.php:23
+msgid "Parent type"
+msgstr ""
+
+#: ../taxonomies/type.php:24
+msgid "Parent type:"
+msgstr ""
+
+#: ../taxonomies/type.php:25
+msgid "Edit type"
+msgstr ""
+
+#: ../taxonomies/type.php:26
+msgid "Update type"
+msgstr ""
+
+#: ../taxonomies/type.php:27 ../taxonomies/type.php:28
+msgid "New type"
+msgstr ""
+
+#: ../taxonomies/type.php:29
+msgid "Types separated by comma"
+msgstr ""
+
+#: ../taxonomies/type.php:30
+msgid "Add or remove types"
+msgstr ""
+
+#: ../taxonomies/type.php:31
+msgid "Choose from the most used types"
+msgstr ""
+
+#: ../taxonomies/type.php:32
+msgid "Types"
+msgstr ""
